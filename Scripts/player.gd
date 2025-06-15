@@ -1,7 +1,8 @@
 class_name Player extends CharacterBody3D
 ## Main player script.
 ##
-## Handles movement of the player. TODO: add more functions to the player, e.g. hotbar/item holding
+## Handles movement of the player. Has a [Hotbar] which can contain [Item] nodes
+## that the player may use.
 
 
 @export_category("Acceleration Values")
@@ -27,7 +28,9 @@ var _walk_velocity := Vector3.ZERO
 # Current vertical velocity due to gravity/jumping (only y)
 var _vertical_velocity := Vector3.ZERO
 
-@onready var _camera = $Camera3D
+@onready var _camera: Camera3D = $Camera3D
+@onready var _raycast: RayCast3D = $Camera3D/RayCast3D
+@onready var _hotbar: Hotbar = $Hotbar
 
 
 func _ready() -> void:
@@ -73,13 +76,25 @@ func _get_vertical_velocity(delta: float) -> Vector3:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed(&"grab"):
-		pass # Pick up the item that the player raycast is intersecting
+	# Pick up an item that the player is looking at when grab is pressed.
+	if event.is_action_pressed(&"grab") and _raycast.is_colliding():
+		var target_object = _raycast.get_collider()
+		if target_object is Item:
+			grab_item(target_object)
+	
+	# Drop an item that the player is currently holding when drop is pressed.
 	if event.is_action_pressed(&"drop"):
-		pass # Drop the item the player is currently holding
+		drop_item()
+	
 	if event.is_action_pressed(&"use"):
 		pass # Use the item the player is currently holding
 		# May need to use location info and raycast hit object to "use" the item
+	
+	if event.is_action_pressed(&"select_next_hotbar_slot"):
+		_hotbar.increment_selected_index()
+	
+	if event.is_action_pressed(&"select_previous_hotbar_slot"):
+		_hotbar.decrement_selected_index()
 	
 	# Toggle running when pressing/releasing run
 	if event.is_action_pressed(&"run"):
@@ -90,9 +105,25 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Handle rotation of camera due to moues movement
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		_camera.rotation.y -= event.screen_relative.x * 0.002
+		_hotbar.rotation.y = _camera.rotation.y
 		_camera.rotation.x -= event.screen_relative.y * 0.002
-		_camera.rotation.x = clampf(_camera.rotation.x, - PI / 2, PI / 2)
+		_camera.rotation.x = clampf(_camera.rotation.x, -1.5, 1.5)
 	
 	# TODO: this should be handled in a world level script
 	if event.is_action_pressed(&"pause"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
+## Grab an item by adding it to the player's hotbar. Auto-select the item that
+## the player just grabbed.
+func grab_item(item: Item) -> void:
+	var added_index: int = _hotbar.add_item(item)
+	if added_index != -1:
+		_hotbar.select_index(added_index)
+
+
+## Drop an item by removing from the player's hotbar, and inserting it back
+## into the environment.
+func drop_item() -> void:
+	# HACK: using get_parent() currently for the environment
+	_hotbar.remove_item(_hotbar.selected_index, get_parent())

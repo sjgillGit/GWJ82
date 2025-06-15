@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf4i5padjq4ik"]
+
+[ext_resource type="Script" uid="uid://cmmupq7303dd8" path="res://Scripts/item.gd" id="1_06hl0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_06hl0"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6th7v"]
+albedo_color = Color(0, 0, 1, 1)
+metallic = 0.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_s26i1"]
+material = SubResource("StandardMaterial3D_6th7v")
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="BlockItem" type="RigidBody3D"]
+collision_layer = 4
+script = ExtResource("1_06hl0")
+hold_position = Vector3(0.4, 0.5, -0.4)
+metadata/_custom_type_script = "uid://cmmupq7303dd8"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_06hl0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_s26i1")
