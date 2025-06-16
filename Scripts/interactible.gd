@@ -1,9 +1,7 @@
 extends Node3D
 
 # VARIABLES -------
-@export var is_cleaned = false
-
-var score = 0
+@export var isCleaned = false
 
 # FUNCTIONS -------
 func _ready() -> void:
@@ -17,8 +15,9 @@ func _input(event):
 	if(event.is_action_pressed("space")):
 		interact()
 
+# Cleaning subject
 func interact():
-	if(not is_cleaned):
-		score += 1
-		is_cleaned = true
+	if(not isCleaned):
+		StatTracker.add_score(10)
+		isCleaned = true
 		print("Subject cleaned")
