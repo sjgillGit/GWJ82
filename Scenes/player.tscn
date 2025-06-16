@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://csxet20djicxo"]
+[gd_scene load_steps=6 format=3 uid="uid://cjtsppxp5qe3l"]
 
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
+[ext_resource type="Theme" uid="uid://ypuodoia5d3q" path="res://Scenes/UI/ui_theme.tres" id="2_vgqql"]
+[ext_resource type="Script" uid="uid://ct77apf2dlu1d" path="res://Scenes/UI/interact_label.gd" id="3_vgqql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
@@ -23,6 +25,39 @@ current = true
 [node name="RayCast3D" type="RayCast3D" parent="CameraOffset/Camera3D"]
 target_position = Vector3(0, 0, -3)
 collision_mask = 5
+
+[node name="Control" type="Control" parent="CameraOffset/Camera3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 128
+
+[node name="Label" type="Label" parent="CameraOffset/Camera3D/Control/MarginContainer" node_paths=PackedStringArray("player")]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_vgqql")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_vgqql")
+player = NodePath("../../../../..")
 
 [node name="Hotbar" type="Node3D" parent="."]
 script = ExtResource("2_cvnsp")
