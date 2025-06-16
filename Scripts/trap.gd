@@ -15,13 +15,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# For testinge
-func _input(event):
-	if(event.is_action_pressed("R")):
-		disarm()
-	if(event.is_action_pressed("E")):
-		pre_trigger()
-
 # Disarm the trap with a probability of 1/7 to trigger it
 func disarm():
 	if(not isDisarmed):
