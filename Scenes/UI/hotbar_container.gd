@@ -4,10 +4,10 @@ extends HBoxContainer
 @export var hotbar: Hotbar
 
 func _ready():
+	hotbar.slot_selected.connect(_highlight_slot)
 	for i in range(hotbar.slots):
 		var hotbar_slot = PanelContainer.new()
 		hotbar_slot.custom_minimum_size = Vector2(64, 64)
-		hotbar.slot_selected.connect(_highlight_slot)
 		add_child(hotbar_slot)
 
 func _highlight_slot(index: int):
