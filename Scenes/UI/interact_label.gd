@@ -13,7 +13,7 @@ func display_label(interactible):
 	if interactible is Interactible:
 		text = key + " to clean"
 		visible = true
-	elif interactible is Trap:
+	elif interactible is trap:
 		text = key + " to disarm"
 		visible = true
 	elif interactible is Item:
