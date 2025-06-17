@@ -9,6 +9,7 @@ func _ready():
 		var hotbar_slot = PanelContainer.new()
 		hotbar_slot.custom_minimum_size = Vector2(64, 64)
 		add_child(hotbar_slot)
+	_highlight_slot(0)
 
 func _highlight_slot(index: int):
 	for i in range(hotbar.slots):
