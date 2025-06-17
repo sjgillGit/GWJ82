@@ -1,4 +1,4 @@
-extends Node3D
+class_name Interactible extends Node3D
 
 # VARIABLES -------
 @export var isCleaned = false

@@ -66,7 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Pick up an item that the player is looking at when grab is pressed.
 	if event.is_action_pressed(&"grab") and _raycast.is_colliding():
 		var target_object = _raycast.get_collider()
-		if target_object is Item:
+		if target_object is PickableItem:
 			grab_item(target_object)
 	
 	# Drop an item that the player is currently holding when drop is pressed.
@@ -79,9 +79,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed(&"select_next_hotbar_slot"):
 		_hotbar.increment_selected_index()
+		_update_raycast_hit()
 	
 	if event.is_action_pressed(&"select_previous_hotbar_slot"):
 		_hotbar.decrement_selected_index()
+		_update_raycast_hit()
 	
 	# Toggle running when pressing/releasing run
 	if event.is_action_pressed(&"run"):
@@ -115,6 +117,13 @@ func _update_raycast_hit() -> void:
 	# The object that is colliding or null if no object is colliding
 	var new_raycast_hit: Object = _raycast.get_collider()
 	if new_raycast_hit != self.raycast_hit:
+		# Update object highlights
+		if self.raycast_hit is Interactible:
+			self.raycast_hit.unhighlight()
+		if new_raycast_hit is Interactible:
+			new_raycast_hit.highlight(_hotbar.selected_item)
+		
+		# Update the raycasts
 		self.raycast_hit = new_raycast_hit
 		raycast_hit_changed.emit(new_raycast_hit)
 
@@ -199,7 +208,7 @@ func _is_moving_horizontally() -> bool:
 
 ## Grab an item by adding it to the player's hotbar. Auto-select the item that
 ## the player just grabbed.
-func grab_item(item: Item) -> void:
+func grab_item(item: PickableItem) -> void:
 	var added_index: int = _hotbar.add_item(item)
 	if added_index != -1:
 		_hotbar.select_index(added_index)
