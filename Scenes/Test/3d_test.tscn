@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7agr4qv0d2wk"]
+
+[ext_resource type="Script" uid="uid://c1od07lgtqgy0" path="res://Scenes/Test/3d_test.gd" id="1_k7t3r"]
+[ext_resource type="PackedScene" uid="uid://csxet20djicxo" path="res://Scenes/player.tscn" id="1_xvgka"]
+[ext_resource type="PackedScene" uid="uid://bf4i5padjq4ik" path="res://Scenes/Items/block_item.tscn" id="2_5rps0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2mhh"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_xvgka"]
+sky_material = SubResource("ProceduralSkyMaterial_b2mhh")
+
+[sub_resource type="Environment" id="Environment_5rps0"]
+background_mode = 2
+sky = SubResource("Sky_xvgka")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_b2mhh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvgka"]
+albedo_color = Color(0.0159294, 0.233877, 0.101155, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5rps0"]
+material = SubResource("StandardMaterial3D_xvgka")
+size = Vector2(1000, 1000)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xvgka"]
+
+[node name="3DTest" type="Node3D"]
+script = ExtResource("1_k7t3r")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5rps0")
+
+[node name="SunLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape3D_b2mhh")
+debug_fill = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_5rps0")
+
+[node name="Player" parent="." instance=ExtResource("1_xvgka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_xvgka")
+
+[node name="BlockItem" parent="." instance=ExtResource("2_5rps0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.690685, -3.16221)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
