@@ -1,4 +1,4 @@
-class_name Item extends RigidBody3D
+class_name PickableItem extends RigidBody3D
 ## Interactable item class.
 ##
 ## Objects of this type are items in the game that may be found in the world.
@@ -7,9 +7,9 @@ class_name Item extends RigidBody3D
 ## the environment.
 
 
-## The position to put this [Item] in when held by the player.
+## The position to put this [PickableItem] in when held by the player.
 @export var hold_position: Vector3
-## The rotation of this [Item] when held by the player, in degrees.
+## The rotation of this [PickableItem] when held by the player, in degrees.
 @export var hold_rotation_degrees: Vector3
 
 
