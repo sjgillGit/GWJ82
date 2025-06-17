@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjtsppxp5qe3l"]
+[gd_scene load_steps=11 format=3 uid="uid://cjtsppxp5qe3l"]
 
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
@@ -7,9 +7,16 @@
 [ext_resource type="Script" uid="uid://cea01tgrrpqqr" path="res://Scenes/UI/luck_container.gd" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://do2kichd5ohxn" path="res://Scenes/UI/luck_placeholder.tres" id="5_3smsa"]
 [ext_resource type="Script" uid="uid://bklf5nwxd6ihi" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
+[ext_resource type="Shader" uid="uid://dxh22k8f5h7ao" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f1ek2"]
+shader = ExtResource("7_8erm5")
+shader_parameter/colors_per_channel = 4
+shader_parameter/dither_strength = 0.15
+shader_parameter/use_dithering = true
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -37,6 +44,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="ShaderColorRect" type="ColorRect" parent="CameraOffset/Camera3D/Control"]
+material = SubResource("ShaderMaterial_f1ek2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="InteractionMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
 layout_mode = 1
