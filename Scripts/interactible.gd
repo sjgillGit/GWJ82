@@ -1,6 +1,10 @@
-class_name Interactible extends Node3D
+class_name Interactible extends RigidBody3D
 
 # VARIABLES -------
+## If true, this object can be interacted with by hand (without a tool).
+## Hand interactions are currently prioritized over tool/item interactions.
+@export var hand_interactible: bool = false
+
 @export var isCleaned = false
 
 # FUNCTIONS -------
@@ -10,14 +14,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# For testinge
-func _input(event):
-	if(event.is_action_pressed("space")):
-		interact()
-
 # Cleaning subject
-func interact():
+func interact(_item: PickableItem):
 	if(not isCleaned):
 		StatTracker.add_score(10)
 		isCleaned = true
 		print("Subject cleaned")
+
+func highlight(_item: PickableItem) -> void:
+	pass
+
+func unhighlight() -> void:
+	pass

@@ -24,3 +24,5 @@ shape = SubResource("BoxShape3D_06hl0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_s26i1")
+
+[connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]
