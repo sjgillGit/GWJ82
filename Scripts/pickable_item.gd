@@ -1,5 +1,5 @@
 @tool
-class_name PickableItem extends RigidBody3D
+class_name PickableItem extends Interactible
 ## Interactable item class.
 ##
 ## Objects of this type are items in the game that may be found in the world.
