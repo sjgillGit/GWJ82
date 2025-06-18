@@ -1,15 +1,15 @@
 class_name Hotbar extends Node3D
-## Hotbar containing [Item] nodes.
+## Hotbar containing [PickableItem] nodes.
 ##
-## Items can be stored in a hotbar and taken out of it.
+## PickableItems can be stored in a hotbar and taken out of it.
 ## When stored, the items are actually reparented into the hotbar, so they can
 ## be positioned using local position easily.
 
 
 ## Signals when an item is added to the hotbar.
-signal item_added(slot_index: int, item: Item)
+signal item_added(slot_index: int, item: PickableItem)
 ## Signals when an item is removed from the hotbar.
-signal item_removed(slot_index: int, item: Item)
+signal item_removed(slot_index: int, item: PickableItem)
 ## Signals when a slot is selected in the hotbar.
 signal slot_selected(slot_index: int)
 
@@ -19,14 +19,14 @@ signal slot_selected(slot_index: int)
 
 ## Getter to access the currently selected item in the hotbar, returns null if
 ## there is no item in the selected slot.
-@onready var selected_item: Item:
+@onready var selected_item: PickableItem:
 	get:
 		assert(_items.size() == slots)
 		return _items[selected_index]
 ## Selected slot index in the hotbar.
 @onready var selected_index: int = 0
 # Stores references to items in the hotbar.
-@onready var _items: Array[Item] = []
+@onready var _items: Array[PickableItem] = []
 
 
 
@@ -55,14 +55,14 @@ func decrement_selected_index() -> void:
 ## Selects an item in the hotbar.
 func select_index(index: int) -> void:
 	# Hide the old item
-	var old_item: Item = _items[selected_index]
+	var old_item: PickableItem = _items[selected_index]
 	if old_item:
 		old_item.visible = false
 	
 	selected_index = clamp(index, 0, _items.size() - 1)
 	
 	# Show the new item
-	var new_item: Item = _items[selected_index]
+	var new_item: PickableItem = _items[selected_index]
 	if new_item:
 		new_item.visible = true
 	
@@ -73,7 +73,7 @@ func select_index(index: int) -> void:
 ## Adds an item to the hotbar, reparenting it to the hotbar if added successfully.
 ## Returns the index of the added item, or null if the hotbar is full and the
 ## item cannot be added.
-func add_item(item: Item) -> int:
+func add_item(item: PickableItem) -> int:
 	var add_index = _find_first_empty_slot()
 	
 	# Add the item if there is an open slot
@@ -89,8 +89,8 @@ func add_item(item: Item) -> int:
 ## Removes an item from slot [param index] and reparents it to [param environment].
 ## Returns the item that was removed, or null if there was no item in that slot.
 ## If there is no item, nothing happens. 
-func remove_item(index: int, environment: Node3D) -> Item:
-	var item: Item = _items[index]
+func remove_item(index: int, environment: Node3D) -> PickableItem:
+	var item: PickableItem = _items[index]
 	
 	if item != null:
 		_items[index] = null

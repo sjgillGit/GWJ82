@@ -25,10 +25,11 @@ current = true
 target_position = Vector3(0, 0, -3)
 collision_mask = 5
 
+[node name="Hotbar" type="Node3D" parent="CameraOffset/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+
 [node name="Player model" parent="CameraOffset/Camera3D" instance=ExtResource("3_6t5aa")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.8, 0)
-
-[node name="Hotbar" type="Node3D" parent="."]
 script = ExtResource("2_cvnsp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

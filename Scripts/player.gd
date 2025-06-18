@@ -54,7 +54,7 @@ var _vertical_velocity := Vector3.ZERO
 
 @onready var _camera: Camera3D = $CameraOffset/Camera3D
 @onready var _raycast: RayCast3D = $CameraOffset/Camera3D/RayCast3D
-@onready var _hotbar: Hotbar = $Hotbar
+@onready var _hotbar: Hotbar = $CameraOffset/Camera3D/Hotbar
 
 
 
@@ -64,25 +64,19 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Pick up an item that the player is looking at when grab is pressed.
-	if event.is_action_pressed(&"grab") and _raycast.is_colliding():
-		var target_object = _raycast.get_collider()
-		if target_object is Item:
-			grab_item(target_object)
+	if event.is_action_pressed(&"interact"):
+		interact()
 	
-	# Drop an item that the player is currently holding when drop is pressed.
 	if event.is_action_pressed(&"drop"):
 		drop_item()
 	
-	if event.is_action_pressed(&"use"):
-		pass # Use the item the player is currently holding
-		# May need to use location info and raycast hit object to "use" the item
-	
 	if event.is_action_pressed(&"select_next_hotbar_slot"):
 		_hotbar.increment_selected_index()
+		_update_raycast_hit()
 	
 	if event.is_action_pressed(&"select_previous_hotbar_slot"):
 		_hotbar.decrement_selected_index()
+		_update_raycast_hit()
 	
 	# Toggle running when pressing/releasing run
 	if event.is_action_pressed(&"run"):
@@ -116,6 +110,13 @@ func _update_raycast_hit() -> void:
 	# The object that is colliding or null if no object is colliding
 	var new_raycast_hit: Object = _raycast.get_collider()
 	if new_raycast_hit != self.raycast_hit:
+		# Update object highlights
+		if self.raycast_hit is Interactible:
+			self.raycast_hit.unhighlight()
+		if new_raycast_hit is Interactible:
+			new_raycast_hit.highlight(_hotbar.selected_item)
+		
+		# Update the raycasts
 		self.raycast_hit = new_raycast_hit
 		raycast_hit_changed.emit(new_raycast_hit)
 
@@ -187,7 +188,6 @@ func _update_camera_rotation() -> void:
 	_camera.rotation.x = clampf(_camera.rotation.x + _pending_camera_rotation.x, -1.5, 1.5)
 	# Also update hotbar rotation to match camera
 	_camera.rotation.y += _pending_camera_rotation.y
-	_hotbar.rotation.y = _camera.rotation.y
 	# Reset pending rotation to zero
 	_pending_camera_rotation = Vector2.ZERO
 
@@ -198,9 +198,31 @@ func _is_moving_horizontally() -> bool:
 #endregion
 
 
+## Performs an interact action when the player presses the interact button.
+## Tries interacting with a hand interactible object first, then tries
+## using the tool in the player's hand.
+func interact() -> void:
+	var collider: Object = _raycast.get_collider()
+	# Try to pick up a pickable item first
+	if collider is PickableItem:
+		grab_item(collider)
+	# Next, try to interact with hand interactible object
+	elif collider is Interactible and collider.hand_interactible:
+		collider.interact(null)
+	# Next, try to interact using the tool on the interactible if the selected item uses raycast
+	elif collider is Interactible and _hotbar.selected_item != null and \
+			_hotbar.selected_item.use_player_raycast:
+		collider.interact(_hotbar.selected_item)
+	# Finally, try to use a shape cast on the selected item 
+	elif _hotbar.selected_item != null and not _hotbar.selected_item.use_player_raycast:
+		collider = _hotbar.selected_item.get_shape_cast_collider()
+		if collider is Interactible:
+			collider.interact(_hotbar.selected_item)
+
+
 ## Grab an item by adding it to the player's hotbar. Auto-select the item that
 ## the player just grabbed.
-func grab_item(item: Item) -> void:
+func grab_item(item: PickableItem) -> void:
 	var added_index: int = _hotbar.add_item(item)
 	if added_index != -1:
 		_hotbar.select_index(added_index)
