@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://do2kichd5ohxn" path="res://Scenes/UI/luck_placeholder.tres" id="5_3smsa"]
 [ext_resource type="Script" uid="uid://dqrlqnqwh5xeu" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
 [ext_resource type="Shader" uid="uid://4de7kww8a0ad" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
+[ext_resource type="PackedScene" uid="uid://ct0pdqsmbw3xm" path="res://Assets/Art/Player/Player model.glb" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
@@ -118,4 +119,10 @@ script = ExtResource("6_3smsa")
 hotbar = NodePath("../../../../../Hotbar")
 
 [node name="Hotbar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+
+[node name="Player model" parent="CameraOffset/Camera3D" instance=ExtResource("3_6t5aa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.8, 0)
 script = ExtResource("2_cvnsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
