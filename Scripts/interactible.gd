@@ -1,6 +1,10 @@
 class_name Interactible extends RigidBody3D
 
 # VARIABLES -------
+## If true, this object can be interacted with by hand (without a tool).
+## Hand interactions are currently prioritized over tool/item interactions.
+@export var hand_interactible: bool = false
+
 @export var isCleaned = false
 
 # FUNCTIONS -------

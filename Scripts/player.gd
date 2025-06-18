@@ -54,7 +54,7 @@ var _vertical_velocity := Vector3.ZERO
 
 @onready var _camera: Camera3D = $CameraOffset/Camera3D
 @onready var _raycast: RayCast3D = $CameraOffset/Camera3D/RayCast3D
-@onready var _hotbar: Hotbar = $Hotbar
+@onready var _hotbar: Hotbar = $CameraOffset/Camera3D/Hotbar
 
 
 #region Built-in Function Overrides
@@ -187,7 +187,6 @@ func _update_camera_rotation() -> void:
 	_camera.rotation.x = clampf(_camera.rotation.x + _pending_camera_rotation.x, -1.5, 1.5)
 	# Also update hotbar rotation to match camera
 	_camera.rotation.y += _pending_camera_rotation.y
-	_hotbar.rotation.y = _camera.rotation.y
 	# Reset pending rotation to zero
 	_pending_camera_rotation = Vector2.ZERO
 
