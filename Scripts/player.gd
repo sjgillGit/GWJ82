@@ -63,19 +63,11 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Pick up an item that the player is looking at when grab is pressed.
-	if event.is_action_pressed(&"grab") and _raycast.is_colliding():
-		var target_object = _raycast.get_collider()
-		if target_object is PickableItem:
-			grab_item(target_object)
+	if event.is_action_pressed(&"interact"):
+		interact()
 	
-	# Drop an item that the player is currently holding when drop is pressed.
 	if event.is_action_pressed(&"drop"):
 		drop_item()
-	
-	if event.is_action_pressed(&"use"):
-		pass # Use the item the player is currently holding
-		# May need to use location info and raycast hit object to "use" the item
 	
 	if event.is_action_pressed(&"select_next_hotbar_slot"):
 		_hotbar.increment_selected_index()
@@ -204,6 +196,28 @@ func _update_camera_rotation() -> void:
 func _is_moving_horizontally() -> bool:
 	return _walk_velocity.length() > 0
 #endregion
+
+
+## Performs an interact action when the player presses the interact button.
+## Tries interacting with a hand interactible object first, then tries
+## using the tool in the player's hand.
+func interact() -> void:
+	var collider: Object = _raycast.get_collider()
+	# Try to pick up a pickable item first
+	if collider is PickableItem:
+		grab_item(collider)
+	# Next, try to interact with hand interactible object
+	elif collider is Interactible and collider.hand_interactible:
+		collider.interact(null)
+	# Next, try to interact using the tool on the interactible if the selected item uses raycast
+	elif collider is Interactible and _hotbar.selected_item != null and \
+			_hotbar.selected_item.use_player_raycast:
+		collider.interact(_hotbar.selected_item)
+	# Finally, try to use a shape cast on the selected item 
+	elif _hotbar.selected_item != null and not _hotbar.selected_item.use_player_raycast:
+		collider = _hotbar.selected_item.get_shape_cast_collider()
+		if collider is Interactible:
+			collider.interact(_hotbar.selected_item)
 
 
 ## Grab an item by adding it to the player's hotbar. Auto-select the item that
