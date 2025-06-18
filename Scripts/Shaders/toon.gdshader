@@ -3,6 +3,7 @@ shader_type canvas_item;
 uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
 
 uniform int colors_per_channel : hint_range(2, 64) = 4;
+uniform bool use_quantize = true;
 uniform float dither_strength : hint_range(0.0, 1.0) = 0.25;
 uniform bool use_dithering = true;
 
@@ -37,21 +38,20 @@ float bayer_dither_4x4(vec2 pos) {
 void fragment() {
 	// Get current color of pixel
 	vec3 color = texture(screen_texture, SCREEN_UV).rgb;
-	// Reduce the number of colors available in RGB channels.
-	// For example, if pixel has red value of 0.63, it will get rounded down to nearest step set via colors_per_channel (default of 4 results in 0.5)
-	vec3 quantized = floor(color * float(colors_per_channel)) / float(colors_per_channel);
+	float levels = float(colors_per_channel);
 	
 	if (use_dithering) {
-		// Get the current pixel
-		vec2 frag_pos = FRAGCOORD.xy;
-		// Get dithering for current pixel based on 4x4 bayer method
-		float dither = bayer_dither_4x4(frag_pos);
-		// Apply dithering based on colors and dither strength parameters
-		vec3 dithered = floor((color + dither * dither_strength) * float(colors_per_channel)) / float(colors_per_channel);
-		// Set the color for the pixel
-		COLOR = vec4(dithered,1.0);
-	} else {
-		// Set the color for the pixel
-		COLOR = vec4(quantized,1.0);
-	}
+        float dither = bayer_dither_4x4(FRAGCOORD.xy);
+        color += dither * dither_strength;
+    }
+	
+	// Reduce the number of colors available in RGB channels.
+	// For example, if pixel has red value of 0.63, it will get rounded down to nearest step set via colors_per_channel (default of 4 results in 0.5)
+    if (use_quantize) {
+        color = floor(color * levels) / levels;
+    }
+
+	
+	// Set the color for the pixel
+	COLOR = vec4(color, 1.0);
 }

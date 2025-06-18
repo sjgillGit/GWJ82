@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://jkacyy17oc4u"]
+
+[ext_resource type="Texture2D" uid="uid://7hu5wsniec5j" path="res://Assets/MainMenu/mainmenu_bg.jpg" id="1_ce3w2"]
+[ext_resource type="Script" uid="uid://bjehfo7tx4nvl" path="res://Scenes/UI/menu_options.gd" id="2_n45e2"]
+[ext_resource type="PackedScene" uid="uid://b7agr4qv0d2wk" path="res://Scenes/Test/3d_test.tscn" id="3_opfnp"]
+[ext_resource type="PackedScene" uid="uid://ghku3nt2r3mc" path="res://Scenes/UI/options_panel.tscn" id="4_cp0ys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1owsv"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ce3w2")
+expand_mode = 3
+
+[node name="MenuOptions" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -64.0
+offset_right = 35.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+script = ExtResource("2_n45e2")
+game_title = "TESTING"
+play_scene = ExtResource("3_opfnp")
+
+[node name="GameTitle" type="Label" parent="MenuOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "TITLE"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MenuOptions"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1owsv")
+
+[node name="PlayButton" type="Button" parent="MenuOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="MenuOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="MenuOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -400.0
+offset_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 32
+
+[node name="OptionsPanel" parent="MarginContainer" instance=ExtResource("4_cp0ys")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+is_main_menu = true
