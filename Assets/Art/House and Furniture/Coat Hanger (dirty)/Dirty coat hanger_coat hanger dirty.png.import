@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://xostxe787hry"
+path.s3tc="res://.godot/imported/Dirty coat hanger_coat hanger dirty.png-941fd4e8ddc65185d6d49c9e8cbd2b3c.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "d077ef04ab8f720d0da73cf819b29bb2"
+}
+
+[deps]
+
+source_file="res://Assets/Art/House and Furniture/Coat Hanger (dirty)/Dirty coat hanger_coat hanger dirty.png"
+dest_files=["res://.godot/imported/Dirty coat hanger_coat hanger dirty.png-941fd4e8ddc65185d6d49c9e8cbd2b3c.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

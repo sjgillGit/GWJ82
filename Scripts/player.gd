@@ -5,6 +5,10 @@ class_name Player extends CharacterBody3D
 ## that the player may use.
 
 
+## Signals when [member raycast_hit] changes.
+signal raycast_hit_changed(raycast_hit: Object)
+
+
 @export_category("Acceleration Values")
 ## Horizontal movement acceleration when on the ground (m/s^2).
 @export var acceleration: float = 100.0
@@ -34,6 +38,9 @@ class_name Player extends CharacterBody3D
 ## Ampluitude of run bob (m).
 @export var run_bob_amplitude: float = 0.08
 
+## [Object] currently hit by the player's raycast, or null if no object is hit.
+var raycast_hit: Object = null
+
 # Value between 0 and 1 representing the progress along a cycle of the bob sine wave
 var _bob_progress: float = 0.0
 # Stores pending camera rotation
@@ -48,6 +55,7 @@ var _vertical_velocity := Vector3.ZERO
 @onready var _camera: Camera3D = $CameraOffset/Camera3D
 @onready var _raycast: RayCast3D = $CameraOffset/Camera3D/RayCast3D
 @onready var _hotbar: Hotbar = $Hotbar
+
 
 
 #region Built-in Function Overrides
@@ -98,7 +106,18 @@ func _physics_process(delta: float) -> void:
 	# Update horizontal and vertical velocity and apply movement
 	self.velocity = _get_walk_velocity(delta) + _get_vertical_velocity(delta)
 	move_and_slide()
+	# Update raycast
+	_update_raycast_hit()
 #endregion
+
+
+# Updates the raycast hit object after the player's raycast is updated.
+func _update_raycast_hit() -> void:
+	# The object that is colliding or null if no object is colliding
+	var new_raycast_hit: Object = _raycast.get_collider()
+	if new_raycast_hit != self.raycast_hit:
+		self.raycast_hit = new_raycast_hit
+		raycast_hit_changed.emit(new_raycast_hit)
 
 
 #region Player Motion
