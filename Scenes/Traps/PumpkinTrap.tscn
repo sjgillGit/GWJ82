@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cepxxi130olfm"]
+
+[ext_resource type="PackedScene" uid="uid://c3klm2244mxqo" path="res://Assets/Art/Traps/Pumpkin/Pumpkin.glb" id="1_mp4hl"]
+[ext_resource type="Script" uid="uid://cjaptx8syxj5u" path="res://Scripts/trap.gd" id="1_tfjsf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mp4hl"]
+size = Vector3(1, 0.935059, 0.276611)
+
+[node name="Area3D" type="Area3D" node_paths=PackedStringArray("trigger_areas")]
+script = ExtResource("1_tfjsf")
+trigger_areas = [NodePath("MotionDetection")]
+
+[node name="Pumpkin" parent="." instance=ExtResource("1_mp4hl")]
+
+[node name="MotionDetection" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0324707, 0.0520151)
+shape = SubResource("BoxShape3D_mp4hl")
+debug_color = Color(0.993041, 0, 0.243444, 0.42)

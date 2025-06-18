@@ -2,6 +2,7 @@ extends Area3D
 
 # VARIABLES -------
 @export var isTriggered = false
+@export var trigger_areas : Array[CollisionShape3D]
 
 var rng = RandomNumberGenerator.new()
 var isDisarmed = false

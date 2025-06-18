@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://ibjro2v6kq2u"]
-
-[ext_resource type="PackedScene" uid="uid://c3klm2244mxqo" path="res://Assets/Art/Traps/Pumpkin/Pumpkin.glb" id="1_3ydib"]
-[ext_resource type="Script" uid="uid://cjaptx8syxj5u" path="res://Scripts/trap.gd" id="2_y2tah"]
-
-[node name="Pumpkin" instance=ExtResource("1_3ydib")]
-script = ExtResource("2_y2tah")

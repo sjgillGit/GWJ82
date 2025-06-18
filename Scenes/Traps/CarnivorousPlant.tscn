@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbxnua5yak45o"]
+
+[ext_resource type="Script" uid="uid://cjaptx8syxj5u" path="res://Scripts/trap.gd" id="1_w12o8"]
+[ext_resource type="PackedScene" uid="uid://bab4yle4cs3ed" path="res://Assets/Art/Traps/Carnivorus Plant/Carnivorous plant.glb" id="2_sea3s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w12o8"]
+radius = 2.50599
+height = 8.26171
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w12o8"]
+size = Vector3(4.26147, 6.02393, 2.87567)
+
+[node name="Scary ASS plant" type="Area3D"]
+script = ExtResource("1_w12o8")
+
+[node name="Carnivorous plant" parent="." instance=ExtResource("2_sea3s")]
+
+[node name="Collision Hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.248572, 2.89959, -0.419661)
+shape = SubResource("CapsuleShape3D_w12o8")
+
+[node name="Motion Detection" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279907, 2.88606, 1.86164)
+shape = SubResource("BoxShape3D_w12o8")
+debug_color = Color(0.982944, 0, 0.357593, 0.42)

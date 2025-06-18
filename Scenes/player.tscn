@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://csxet20djicxo"]
+[gd_scene load_steps=5 format=3 uid="uid://csxet20djicxo"]
 
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://ct0pdqsmbw3xm" path="res://Assets/Art/Player/Player model.glb" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
@@ -23,6 +24,9 @@ current = true
 [node name="RayCast3D" type="RayCast3D" parent="CameraOffset/Camera3D"]
 target_position = Vector3(0, 0, -3)
 collision_mask = 5
+
+[node name="Player model" parent="CameraOffset/Camera3D" instance=ExtResource("3_6t5aa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.8, 0)
 
 [node name="Hotbar" type="Node3D" parent="."]
 script = ExtResource("2_cvnsp")
