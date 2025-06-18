@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7agr4qv0d2wk"]
+[gd_scene load_steps=17 format=3 uid="uid://b7agr4qv0d2wk"]
 
 [ext_resource type="Script" uid="uid://c1od07lgtqgy0" path="res://Scenes/Test/3d_test.gd" id="1_k7t3r"]
-[ext_resource type="PackedScene" uid="uid://csxet20djicxo" path="res://Scenes/player.tscn" id="1_xvgka"]
+[ext_resource type="PackedScene" uid="uid://cjtsppxp5qe3l" path="res://Scenes/player.tscn" id="1_xvgka"]
 [ext_resource type="PackedScene" uid="uid://bf4i5padjq4ik" path="res://Scenes/Items/block_item.tscn" id="2_5rps0"]
+[ext_resource type="Script" uid="uid://cwfhklklkoa8n" path="res://Scripts/interactible.gd" id="4_txd6h"]
+[ext_resource type="Script" uid="uid://c2767j7cwr0oi" path="res://Scripts/cleanable.gd" id="5_pr0ne"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2mhh"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -27,6 +29,14 @@ material = SubResource("StandardMaterial3D_xvgka")
 size = Vector2(1000, 1000)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xvgka"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pr0ne"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_txd6h"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_syonc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_scesw"]
 
 [node name="3DTest" type="Node3D"]
 script = ExtResource("1_k7t3r")
@@ -62,3 +72,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.690685, -3.16221)
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Interactible" type="StaticBody3D" parent="." node_paths=PackedStringArray("default_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.362)
+script = ExtResource("4_txd6h")
+default_mesh = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactible"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966901, 0)
+mesh = SubResource("SphereMesh_pr0ne")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969046, 0)
+shape = SubResource("SphereShape3D_txd6h")
+
+[node name="Label3D" type="Label3D" parent="Interactible"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87988, 0)
+billboard = 1
+text = "INTERACTIBLE"
+
+[node name="Cleanable" type="StaticBody3D" parent="." node_paths=PackedStringArray("default_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6.362)
+script = ExtResource("5_pr0ne")
+default_mesh = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cleanable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966901, 0)
+mesh = SubResource("SphereMesh_syonc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cleanable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969046, 0)
+shape = SubResource("SphereShape3D_scesw")
+
+[node name="Label3D" type="Label3D" parent="Cleanable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87988, 0)
+billboard = 1
+text = "CLEANABLE"
