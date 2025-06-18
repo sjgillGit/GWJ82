@@ -57,6 +57,7 @@ var _vertical_velocity := Vector3.ZERO
 @onready var _hotbar: Hotbar = $CameraOffset/Camera3D/Hotbar
 
 
+
 #region Built-in Function Overrides
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
