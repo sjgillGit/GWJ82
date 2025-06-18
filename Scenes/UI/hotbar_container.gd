@@ -18,3 +18,8 @@ func _highlight_slot(index: int):
 			hotbar_slot.modulate = Color(1, 1, 1, 1)
 		else:
 			hotbar_slot.modulate = Color(1, 1, 1, 0.5)
+			
+			
+
+
+#COMMENT ON THIS PLEASEEEEE - Jecht

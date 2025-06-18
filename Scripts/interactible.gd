@@ -1,5 +1,4 @@
 class_name Interactible extends RigidBody3D
-
 @export var current_mesh : MeshInstance3D
 
 var outline_resource = preload("res://Scripts/Shaders/target_outline.tres")

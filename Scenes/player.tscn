@@ -1,14 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjtsppxp5qe3l"]
+[gd_scene load_steps=12 format=3 uid="uid://cjtsppxp5qe3l"]
 
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
 [ext_resource type="Theme" uid="uid://ypuodoia5d3q" path="res://Scenes/UI/ui_theme.tres" id="2_vgqql"]
-[ext_resource type="Script" uid="uid://dgwkt51ixucg7" path="res://Scenes/UI/interact_label.gd" id="3_vgqql"]
-[ext_resource type="Script" uid="uid://dsyda8ureutpn" path="res://Scenes/UI/luck_container.gd" id="4_x3wgy"]
-[ext_resource type="Texture2D" uid="uid://do2kichd5ohxn" path="res://Scenes/UI/luck_placeholder.tres" id="5_3smsa"]
-[ext_resource type="Script" uid="uid://dqrlqnqwh5xeu" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
-[ext_resource type="Shader" uid="uid://4de7kww8a0ad" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
 [ext_resource type="PackedScene" uid="uid://ct0pdqsmbw3xm" path="res://Assets/Art/Player/Player model.glb" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://cexvsvrnlhmlv" path="res://Scenes/UI/interact_label.gd" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://dgh82xhnhwhld" path="res://Scenes/UI/luck_container.gd" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://do2kichd5ohxn" path="res://Scenes/UI/luck_placeholder.tres" id="5_3smsa"]
+[ext_resource type="Script" uid="uid://bh8mvtqp0bxiq" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
+[ext_resource type="Shader" uid="uid://d0wydf1tq25tt" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
@@ -118,11 +118,12 @@ theme_override_constants/separation = 16
 script = ExtResource("6_3smsa")
 hotbar = NodePath("../../../../../Hotbar")
 
-[node name="Hotbar" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
-
 [node name="Player model" parent="CameraOffset/Camera3D" instance=ExtResource("3_6t5aa")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.8, 0)
+script = ExtResource("2_cvnsp")
+
+[node name="Hotbar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
 script = ExtResource("2_cvnsp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
