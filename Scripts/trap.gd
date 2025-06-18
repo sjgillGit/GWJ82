@@ -12,6 +12,9 @@ var disarmFailureProbablity = 0.143 # 1/7
 # FUNCTIONS -------
 func _ready() -> void:
 	pass # Replace with function body.
+# do this later I guess - Jecht
+#	for areas in trigger_areas:
+#		areas.connect()
 
 func _process(delta: float) -> void:
 	pass
