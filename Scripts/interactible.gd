@@ -1,5 +1,9 @@
 class_name Interactible extends RigidBody3D
 
+@export var current_mesh : MeshInstance3D
+
+var outline_resource = preload("res://Scripts/Shaders/target_outline.tres")
+
 # VARIABLES -------
 ## If true, this object can be interacted with by hand (without a tool).
 ## Hand interactions are currently prioritized over tool/item interactions.
@@ -9,7 +13,13 @@ class_name Interactible extends RigidBody3D
 
 # FUNCTIONS -------
 func _ready() -> void:
-	pass # Replace with function body.
+	if (current_mesh == null):
+		var mesh = get_node_or_null("MeshInstance3D")
+		if (mesh != null):
+			print("No mesh set in interactible, defaulting to MeshInstance3D")
+			current_mesh = mesh
+		else:
+			print("No mesh set in interactible")
 
 func _process(delta: float) -> void:
 	pass
@@ -21,8 +31,10 @@ func interact(_item: PickableItem):
 		isCleaned = true
 		print("Subject cleaned")
 
-func highlight(_item: PickableItem) -> void:
-	pass
+func highlight(_item: PickableItem = null) -> void:
+	if (current_mesh != null):
+		current_mesh.material_overlay = outline_resource
 
 func unhighlight() -> void:
-	pass
+	if (current_mesh != null):
+		current_mesh.material_overlay = null

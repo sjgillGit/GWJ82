@@ -1,11 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://csxet20djicxo"]
+[gd_scene load_steps=11 format=3 uid="uid://cjtsppxp5qe3l"]
 
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
+[ext_resource type="Theme" uid="uid://ypuodoia5d3q" path="res://Scenes/UI/ui_theme.tres" id="2_vgqql"]
+[ext_resource type="Script" uid="uid://dgwkt51ixucg7" path="res://Scenes/UI/interact_label.gd" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://dsyda8ureutpn" path="res://Scenes/UI/luck_container.gd" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://do2kichd5ohxn" path="res://Scenes/UI/luck_placeholder.tres" id="5_3smsa"]
+[ext_resource type="Script" uid="uid://dqrlqnqwh5xeu" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
+[ext_resource type="Shader" uid="uid://4de7kww8a0ad" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
 [ext_resource type="PackedScene" uid="uid://ct0pdqsmbw3xm" path="res://Assets/Art/Player/Player model.glb" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f1ek2"]
+shader = ExtResource("7_8erm5")
+shader_parameter/colors_per_channel = 4
+shader_parameter/dither_strength = 0.15
+shader_parameter/use_dithering = true
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -25,7 +37,88 @@ current = true
 target_position = Vector3(0, 0, -3)
 collision_mask = 5
 
-[node name="Hotbar" type="Node3D" parent="CameraOffset/Camera3D"]
+[node name="Control" type="Control" parent="CameraOffset/Camera3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ShaderColorRect" type="ColorRect" parent="CameraOffset/Camera3D/Control"]
+material = SubResource("ShaderMaterial_f1ek2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractionMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 128
+
+[node name="InteractionLabel" type="Label" parent="CameraOffset/Camera3D/Control/InteractionMarginContainer" node_paths=PackedStringArray("player")]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_vgqql")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_vgqql")
+player = NodePath("../../../../..")
+
+[node name="LuckMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="LuckContainer" type="HBoxContainer" parent="CameraOffset/Camera3D/Control/LuckMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+script = ExtResource("4_x3wgy")
+luck_texture = ExtResource("5_3smsa")
+
+[node name="HotbarMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 32
+
+[node name="HotbarContainer" type="HBoxContainer" parent="CameraOffset/Camera3D/Control/HotbarMarginContainer" node_paths=PackedStringArray("hotbar")]
+layout_mode = 2
+theme_override_constants/separation = 16
+script = ExtResource("6_3smsa")
+hotbar = NodePath("../../../../../Hotbar")
+
+[node name="Hotbar" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
 
 [node name="Player model" parent="CameraOffset/Camera3D" instance=ExtResource("3_6t5aa")]
