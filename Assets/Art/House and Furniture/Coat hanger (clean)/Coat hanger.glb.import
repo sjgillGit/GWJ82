@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://62yehcmnoshk"
-path="res://.godot/imported/Book 6.glb-3f7dc407e752549627b8d39d5e333454.scn"
+uid="uid://cq7m4442kbv6l"
+path="res://.godot/imported/Coat hanger.glb-b3dfd4608c12ccb17ed699576deeb25e.scn"
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Book 6/Book 6.glb"
-dest_files=["res://.godot/imported/Book 6.glb-3f7dc407e752549627b8d39d5e333454.scn"]
+source_file="res://Assets/Art/House and Furniture/Coat hanger (clean)/Coat hanger.glb"
+dest_files=["res://.godot/imported/Coat hanger.glb-b3dfd4608c12ccb17ed699576deeb25e.scn"]
 
 [params]
 
-nodes/root_type="MeshInstance3D"
+nodes/root_type="Interactible"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

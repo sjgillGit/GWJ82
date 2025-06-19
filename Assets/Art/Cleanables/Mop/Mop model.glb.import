@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cq7m4442kbv6l"
-path="res://.godot/imported/Coat hanger.glb-1f0f78695c4a2c13528d5b0e8aff6a48.scn"
+uid="uid://e2d45bu5dbau"
+path="res://.godot/imported/Mop model.glb-39fd562503f2f11f106b79d45ef86974.scn"
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Coat hanger/Coat hanger.glb"
-dest_files=["res://.godot/imported/Coat hanger.glb-1f0f78695c4a2c13528d5b0e8aff6a48.scn"]
+source_file="res://Assets/Art/Cleanables/Mop/Mop model.glb"
+dest_files=["res://.godot/imported/Mop model.glb-39fd562503f2f11f106b79d45ef86974.scn"]
 
 [params]
 

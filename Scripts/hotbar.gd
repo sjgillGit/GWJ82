@@ -91,7 +91,6 @@ func add_item(item: PickableItem) -> int:
 ## If there is no item, nothing happens. 
 func remove_item(index: int, environment: Node3D) -> PickableItem:
 	var item: PickableItem = _items[index]
-	
 	if item != null:
 		_items[index] = null
 		item.reparent(environment)

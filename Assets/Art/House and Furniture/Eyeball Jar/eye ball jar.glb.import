@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/eye ball jar.glb-095dcd5699ad18f0e1920ea42d74
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

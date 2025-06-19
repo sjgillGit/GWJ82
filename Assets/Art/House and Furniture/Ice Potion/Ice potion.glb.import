@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://62yehcmnoshk"
-path="res://.godot/imported/Book 6.glb-3f7dc407e752549627b8d39d5e333454.scn"
+uid="uid://nmeko85gyftp"
+path="res://.godot/imported/Ice potion.glb-3d9cab5c07b6eae04e21552fc0fbd663.scn"
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Book 6/Book 6.glb"
-dest_files=["res://.godot/imported/Book 6.glb-3f7dc407e752549627b8d39d5e333454.scn"]
+source_file="res://Assets/Art/House and Furniture/Ice Potion/Ice potion.glb"
+dest_files=["res://.godot/imported/Ice potion.glb-3d9cab5c07b6eae04e21552fc0fbd663.scn"]
 
 [params]
 

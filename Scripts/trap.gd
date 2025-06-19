@@ -1,4 +1,4 @@
-extends Area3D
+class_name Trap extends Area3D
 
 # VARIABLES -------
 @export var isTriggered = false
