@@ -13,10 +13,10 @@ dest_files=["res://.godot/imported/Acid potion.glb-c8a34a1d5cabe879b53f47b6b87e2
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="RigidBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=3.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true

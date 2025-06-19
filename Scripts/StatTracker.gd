@@ -2,6 +2,9 @@ extends Node
 
 # VARIABLES -------
 var score = 0
+var luck = 4
+
+signal luck_changed
 
 # FUNCTIONS -------
 # Set score to zero
@@ -27,3 +30,6 @@ func evaluate_score():
 func add_score(amount):
 	score = score + amount
 	
+func decrement_luck():
+	luck -= 1
+	luck_changed.emit()

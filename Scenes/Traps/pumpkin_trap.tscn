@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://um14l2k3rwvw"]
+
+[ext_resource type="PackedScene" uid="uid://c3klm2244mxqo" path="res://Assets/Art/Traps/Pumpkin/Pumpkin.glb" id="1_3ydib"]
+[ext_resource type="Script" uid="uid://cjaptx8syxj5u" path="res://Scripts/trap.gd" id="2_y2tah"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3ydib"]
+radius = 0.536616
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2tah"]
+size = Vector3(3, 1, 0.75)
+
+[node name="Pumpkin" node_paths=PackedStringArray("highlight_meshes") instance=ExtResource("1_3ydib")]
+script = ExtResource("2_y2tah")
+trigger_animation_name = "Attack_long"
+highlight_meshes = [NodePath("Armature/Skeleton3D/Sphere_005"), NodePath("Armature/Skeleton3D/Plane_003")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0.069823, 0, 1.08682)
+bones/0/rotation = Quaternion(0, -1, 0, 4.37114e-08)
+bones/4/rotation = Quaternion(8.97225e-08, 2.01542e-07, -0.27896, 0.960303)
+bones/5/rotation = Quaternion(-2.14787e-08, 6.14383e-08, -0.063815, 0.997962)
+bones/6/rotation = Quaternion(-1.21233e-07, -1.18853e-07, 0.269948, 0.962875)
+bones/7/rotation = Quaternion(-1.32998e-07, 1.99896e-07, 0.245487, 0.9694)
+bones/8/rotation = Quaternion(6.2213e-16, 3.17865e-08, -3.45552e-14, 1)
+bones/12/rotation = Quaternion(8.97225e-08, -2.01542e-07, 0.27896, 0.960303)
+bones/13/rotation = Quaternion(-2.14787e-08, -6.14383e-08, 0.063815, 0.997962)
+bones/14/rotation = Quaternion(-1.21233e-07, 1.18853e-07, -0.269948, 0.962875)
+bones/15/rotation = Quaternion(-1.32998e-07, -1.99896e-07, -0.245487, 0.9694)
+bones/16/rotation = Quaternion(-1.33194e-15, -3.17865e-08, 3.75494e-14, 1)
+bones/17/position = Vector3(-5.59353e-10, 2.80727, 0.941027)
+bones/17/rotation = Quaternion(0.751299, -2.56996e-07, -2.92564e-07, 0.659962)
+bones/19/position = Vector3(-5.21541e-08, 0.216588, -1.19209e-07)
+bones/19/rotation = Quaternion(-0.619286, -0.00319508, 0.00252017, 0.785155)
+bones/20/rotation = Quaternion(0.152799, 3.24756e-08, -0.00124363, 0.988257)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0298031, 0.351588, -0.000499994)
+shape = SubResource("SphereShape3D_3ydib")
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="MotionDetection" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.367, 0)
+shape = SubResource("BoxShape3D_y2tah")
+debug_color = Color(0.993041, 0, 0.243444, 0.42)

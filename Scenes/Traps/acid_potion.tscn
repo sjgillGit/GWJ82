@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://co4mp8m6wcd48"]
+
+[ext_resource type="PackedScene" uid="uid://ckjd222i4lfa6" path="res://Assets/Art/Traps/Acid Potion/Acid potion.glb" id="1_8uf45"]
+[ext_resource type="Script" uid="uid://cyoppg8flsjtu" path="res://Scripts/interaction_trap.gd" id="2_1xdr7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xdr7"]
+radius = 0.148551
+height = 0.483712
+
+[node name="Acid potion" node_paths=PackedStringArray("highlight_meshes") instance=ExtResource("1_8uf45")]
+script = ExtResource("2_1xdr7")
+highlight_meshes = [NodePath("Cube")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.218277, 0)
+shape = SubResource("CapsuleShape3D_1xdr7")
