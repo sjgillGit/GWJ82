@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Desk.glb-b54c0e6d82c682db4f0929a36ab2a2a5.scn
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

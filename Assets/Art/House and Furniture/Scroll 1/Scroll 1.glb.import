@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://62yehcmnoshk"
-path="res://.godot/imported/Book 6.glb-3f7dc407e752549627b8d39d5e333454.scn"
+uid="uid://dfdak4ngytvbs"
+path="res://.godot/imported/Scroll 1.glb-fbe24436817bd8b035f5d58865e5a985.scn"
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Book 6/Book 6.glb"
-dest_files=["res://.godot/imported/Book 6.glb-3f7dc407e752549627b8d39d5e333454.scn"]
+source_file="res://Assets/Art/House and Furniture/Scroll 1/Scroll 1.glb"
+dest_files=["res://.godot/imported/Scroll 1.glb-fbe24436817bd8b035f5d58865e5a985.scn"]
 
 [params]
 

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Wall.glb-0fa8144f1d8763bb7465a093e7a721fd.scn
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

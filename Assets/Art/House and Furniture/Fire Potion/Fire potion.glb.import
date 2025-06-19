@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://62yehcmnoshk"
-path="res://.godot/imported/Book 6.glb-3f7dc407e752549627b8d39d5e333454.scn"
+uid="uid://bn4xdiau0d58q"
+path="res://.godot/imported/Fire potion.glb-c32c41f8ba6f5a1cb832a70b635aff49.scn"
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Book 6/Book 6.glb"
-dest_files=["res://.godot/imported/Book 6.glb-3f7dc407e752549627b8d39d5e333454.scn"]
+source_file="res://Assets/Art/House and Furniture/Fire Potion/Fire potion.glb"
+dest_files=["res://.godot/imported/Fire potion.glb-c32c41f8ba6f5a1cb832a70b635aff49.scn"]
 
 [params]
 

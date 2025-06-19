@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Chair 1.glb-ea52c73b637eaf40127432a19a90511c.
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

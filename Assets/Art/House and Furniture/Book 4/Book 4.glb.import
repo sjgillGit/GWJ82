@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Book 4.glb-cdc68d36a35eaa1bb7b607808dc6d5b9.s
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

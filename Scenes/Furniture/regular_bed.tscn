@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://be0wss1w2jh4u"]
+
+[ext_resource type="Script" uid="uid://cwfhklklkoa8n" path="res://Scripts/interactible.gd" id="1_fnsa7"]
+
+[node name="stupid BEDDD" type="RigidBody3D"]
+script = ExtResource("1_fnsa7")
