@@ -10,7 +10,7 @@ uniform bool use_dithering = true;
 float bayer_dither_4x4(vec2 pos) {
 	int x = int(mod(pos.x, 4.0));
 	int y = int(mod(pos.y, 4.0));
-	
+
 	// 4x4 bayer matrix (values from 0 to 15)
 	int index = int(
 		(x == 0 && y == 0) ? 0 :
@@ -30,7 +30,7 @@ float bayer_dither_4x4(vec2 pos) {
         (x == 2 && y == 3) ? 13 :
         5 // (x == 3 && y == 3)
 	);
-	
+
 	return float(index) / 16.0;
 }
 
@@ -39,19 +39,19 @@ void fragment() {
 	// Get current color of pixel
 	vec3 color = texture(screen_texture, SCREEN_UV).rgb;
 	float levels = float(colors_per_channel);
-	
+
 	if (use_dithering) {
         float dither = bayer_dither_4x4(FRAGCOORD.xy);
         color += dither * dither_strength;
     }
-	
+
 	// Reduce the number of colors available in RGB channels.
 	// For example, if pixel has red value of 0.63, it will get rounded down to nearest step set via colors_per_channel (default of 4 results in 0.5)
     if (use_quantize) {
         color = floor(color * levels) / levels;
     }
 
-	
+
 	// Set the color for the pixel
 	COLOR = vec4(color, 1.0);
 }

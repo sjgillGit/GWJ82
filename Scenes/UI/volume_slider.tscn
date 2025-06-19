@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blldqjad8wb1r"]
 
-[ext_resource type="Script" uid="uid://j3rlbib5clpn" path="res://Scenes/UI/volume_slider.gd" id="1_1bkbj"]
+[ext_resource type="Script" uid="uid://cbfgi6nv3ixuw" path="res://Scenes/UI/volume_slider.gd" id="1_1bkbj"]
 
 [node name="VolumeSlider" type="Control"]
 custom_minimum_size = Vector2(200, 50)

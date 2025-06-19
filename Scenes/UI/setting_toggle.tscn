@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://thqkgr28nn37"]
 
-[ext_resource type="Script" uid="uid://g1vm7k0oaim" path="res://Scenes/UI/setting_toggle.gd" id="1_qumuf"]
+[ext_resource type="Script" uid="uid://5xj4qbsshcn5" path="res://Scenes/UI/setting_toggle.gd" id="1_qumuf"]
 
 [node name="SettingToggle" type="Control"]
 custom_minimum_size = Vector2(280, 50)

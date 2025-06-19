@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ghku3nt2r3mc"]
 
-[ext_resource type="Script" uid="uid://d4laqy73d1gh7" path="res://Scenes/UI/options_panel.gd" id="1_8ogtw"]
+[ext_resource type="Script" uid="uid://d1b6rcyk37ukn" path="res://Scenes/UI/options_panel.gd" id="1_8ogtw"]
 [ext_resource type="PackedScene" uid="uid://blldqjad8wb1r" path="res://Scenes/UI/volume_slider.tscn" id="2_2h6k6"]
 [ext_resource type="PackedScene" uid="uid://thqkgr28nn37" path="res://Scenes/UI/setting_toggle.tscn" id="3_2h6k6"]
 
@@ -48,11 +48,13 @@ bus_name = "SFX"
 
 [node name="SettingToggle" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_2h6k6")]
 layout_mode = 2
-setting_name = "Dithering"
+setting_name = "use_dither"
+setting_description = "Dithering"
 
 [node name="SettingToggle2" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_2h6k6")]
 layout_mode = 2
-setting_name = "Quantization"
+setting_name = "use_quantize"
+setting_description = "Quantization"
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
