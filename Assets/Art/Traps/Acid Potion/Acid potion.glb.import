@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cq7m4442kbv6l"
-path="res://.godot/imported/Coat hanger.glb-1f0f78695c4a2c13528d5b0e8aff6a48.scn"
+uid="uid://ckjd222i4lfa6"
+path="res://.godot/imported/Acid potion.glb-c8a34a1d5cabe879b53f47b6b87e26cb.scn"
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Coat hanger/Coat hanger.glb"
-dest_files=["res://.godot/imported/Coat hanger.glb-1f0f78695c4a2c13528d5b0e8aff6a48.scn"]
+source_file="res://Assets/Art/Traps/Acid Potion/Acid potion.glb"
+dest_files=["res://.godot/imported/Acid potion.glb-c8a34a1d5cabe879b53f47b6b87e26cb.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="RigidBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=3.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true

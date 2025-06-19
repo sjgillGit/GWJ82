@@ -3,14 +3,13 @@ extends HBoxContainer
 
 @export var luck_texture: Texture2D
 
-var luck : int = 3
-
 func _ready():
-    init_luck()
+	StatTracker.luck_changed.connect(_refresh_luck)
+	_refresh_luck()
 
-func init_luck():
-    for i in range(luck):
-        var luck_icon = TextureRect.new()
-        luck_icon.texture = luck_texture
-        luck_icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE
-        add_child(luck_icon)
+func _refresh_luck():
+	for i in range(StatTracker.luck):
+		var luck_icon = TextureRect.new()
+		luck_icon.texture = luck_texture
+		luck_icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE
+		add_child(luck_icon)

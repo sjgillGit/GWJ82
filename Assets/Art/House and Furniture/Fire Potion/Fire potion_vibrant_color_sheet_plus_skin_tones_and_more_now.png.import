@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1ey34ilcqx7a"
-path.s3tc="res://.godot/imported/Coat hanger_coat hanger clean.png-1002aa93729b8aa88db697a9dd6f583c.s3tc.ctex"
+uid="uid://7b27n1mwol17"
+path.s3tc="res://.godot/imported/Fire potion_vibrant_color_sheet_plus_skin_tones_and_more_now.png-b26f6b4e8187a03b3c23039963e54b3a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f37516ca44568e60ea4757a0535a066d"
+"md5": "db687c54d17d1e0461f9e15302925e23"
 }
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Coat hanger/Coat hanger_coat hanger clean.png"
-dest_files=["res://.godot/imported/Coat hanger_coat hanger clean.png-1002aa93729b8aa88db697a9dd6f583c.s3tc.ctex"]
+source_file="res://Assets/Art/House and Furniture/Fire Potion/Fire potion_vibrant_color_sheet_plus_skin_tones_and_more_now.png"
+dest_files=["res://.godot/imported/Fire potion_vibrant_color_sheet_plus_skin_tones_and_more_now.png-b26f6b4e8187a03b3c23039963e54b3a.s3tc.ctex"]
 
 [params]
 

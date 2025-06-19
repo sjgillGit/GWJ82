@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Dirty coat hanger.glb-d6a78221ce89b16907a04f1
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Interactible"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

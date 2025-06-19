@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7agr4qv0d2wk"]
+[gd_scene load_steps=19 format=3 uid="uid://b7agr4qv0d2wk"]
 
 [ext_resource type="Script" uid="uid://c1od07lgtqgy0" path="res://Scenes/Test/3d_test.gd" id="1_k7t3r"]
 [ext_resource type="PackedScene" uid="uid://cjtsppxp5qe3l" path="res://Scenes/player.tscn" id="1_xvgka"]
 [ext_resource type="PackedScene" uid="uid://bf4i5padjq4ik" path="res://Scenes/Items/block_item.tscn" id="2_5rps0"]
 [ext_resource type="Script" uid="uid://cwfhklklkoa8n" path="res://Scripts/interactible.gd" id="4_txd6h"]
-[ext_resource type="Script" uid="uid://c2767j7cwr0oi" path="res://Scripts/cleanable.gd" id="5_pr0ne"]
+[ext_resource type="PackedScene" uid="uid://um14l2k3rwvw" path="res://Scenes/Traps/pumpkin_trap.tscn" id="5_pr0ne"]
+[ext_resource type="PackedScene" uid="uid://bnu6weubjshll" path="res://Scenes/Traps/carnivorous_plant_trap.tscn" id="6_syonc"]
+[ext_resource type="PackedScene" uid="uid://co4mp8m6wcd48" path="res://Scenes/Traps/acid_potion.tscn" id="7_scesw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2mhh"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -30,13 +32,13 @@ size = Vector2(1000, 1000)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xvgka"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_pr0ne"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_txd6h"]
-
 [sub_resource type="SphereMesh" id="SphereMesh_syonc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_scesw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pr0ne"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_txd6h"]
 
 [node name="3DTest" type="Node3D"]
 script = ExtResource("1_k7t3r")
@@ -58,7 +60,7 @@ debug_fill = false
 mesh = SubResource("PlaneMesh_5rps0")
 
 [node name="Player" parent="." instance=ExtResource("1_xvgka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Box" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -73,28 +75,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.690685, -3.16221)
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Interactible" type="StaticBody3D" parent="." node_paths=PackedStringArray("default_mesh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.362)
-script = ExtResource("4_txd6h")
-default_mesh = NodePath("MeshInstance3D")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactible"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966901, 0)
-mesh = SubResource("SphereMesh_pr0ne")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactible"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969046, 0)
-shape = SubResource("SphereShape3D_txd6h")
-
-[node name="Label3D" type="Label3D" parent="Interactible"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87988, 0)
-billboard = 1
-text = "INTERACTIBLE"
-
-[node name="Cleanable" type="StaticBody3D" parent="." node_paths=PackedStringArray("default_mesh")]
+[node name="Cleanable" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6.362)
-script = ExtResource("5_pr0ne")
-default_mesh = NodePath("MeshInstance3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cleanable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966901, 0)
@@ -108,3 +90,31 @@ shape = SubResource("SphereShape3D_scesw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87988, 0)
 billboard = 1
 text = "CLEANABLE"
+
+[node name="Interactable" type="RigidBody3D" parent="."]
+script = ExtResource("4_txd6h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966901, -6.362)
+mesh = SubResource("SphereMesh_pr0ne")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969046, -6.362)
+shape = SubResource("SphereShape3D_txd6h")
+
+[node name="Label3D" type="Label3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87988, -6.362)
+billboard = 1
+text = "INTERACTIBLE"
+
+[node name="Traps" type="Node" parent="."]
+
+[node name="Pumpkin" parent="Traps" instance=ExtResource("5_pr0ne")]
+transform = Transform3D(0.505191, 0, 0.863008, 0, 1, 0, -0.863008, 0, 0.505191, -4.56079, 0.00311812, -4.77078)
+
+[node name="Carnivorous plant" parent="Traps" instance=ExtResource("6_syonc")]
+transform = Transform3D(0.448914, 0, 0.893575, 0, 1, 0, -0.893575, 0, 0.448914, -7.11336, 0, -2.66927)
+
+[node name="Acid potion" parent="." instance=ExtResource("7_scesw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.165, 0, -6.77959)

@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnu6weubjshll"]
+
+[ext_resource type="PackedScene" uid="uid://bab4yle4cs3ed" path="res://Assets/Art/Traps/Carnivorus Plant/Carnivorous plant.glb" id="1_vkc08"]
+[ext_resource type="Script" uid="uid://cjaptx8syxj5u" path="res://Scripts/trap.gd" id="2_32on6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vkc08"]
+height = 0.219788
+radius = 0.0712891
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_32on6"]
+
+[node name="Carnivorous plant" instance=ExtResource("1_vkc08")]
+script = ExtResource("2_32on6")
+trigger_animation_name = "long_attack"
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/scale = Vector3(0.0409124, 0.0409124, 0.0409124)
+bones/2/rotation = Quaternion(-0.0679583, 0, 0, 0.997688)
+bones/3/rotation = Quaternion(1.76206e-05, 1.19209e-07, 2.09877e-12, 1)
+bones/4/rotation = Quaternion(0.130825, 2.46367e-14, 3.11911e-08, 0.991406)
+bones/5/rotation = Quaternion(0.242, -3.66155e-15, 5.76972e-08, 0.970276)
+bones/6/rotation = Quaternion(0.514969, -3.74698e-08, 1.00268e-07, 0.857209)
+bones/7/position = Vector3(0.135929, 2.52779, 1.23326)
+bones/7/rotation = Quaternion(0.376516, 6.9942e-08, 8.52785e-08, 0.92641)
+bones/8/rotation = Quaternion(-0.174426, 9.93924e-15, -5.26753e-08, 0.98467)
+bones/9/rotation = Quaternion(-0.274525, 8.40643e-08, -1.06904e-07, 0.96158)
+bones/10/rotation = Quaternion(-0.178621, 1.17292e-07, -1.06467e-07, 0.983918)
+bones/12/rotation = Quaternion(0.742171, -0.392863, -0.358092, -0.40818)
+bones/13/position = Vector3(1.74701e-08, 2.71992, -0.1157)
+bones/13/rotation = Quaternion(-0.27395, 4.20391e-08, -5.334e-08, 0.961744)
+bones/14/rotation = Quaternion(0.180676, 2.34494e-07, 8.61527e-08, 0.983543)
+bones/15/rotation = Quaternion(0.240246, 6.69692e-13, 1.71837e-07, 0.970712)
+bones/18/rotation = Quaternion(0.0348535, 0.0348537, 0.503391, 0.862652)
+bones/19/rotation = Quaternion(0.0952469, -2.63477e-08, -0.490886, 0.866002)
+bones/20/rotation = Quaternion(0.0360756, -0.0360751, -0.495346, 0.867197)
+bones/21/rotation = Quaternion(0.0936914, 2.53842e-08, 0.482873, 0.870664)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120536, 0.0332681)
+shape = SubResource("CylinderShape3D_vkc08")
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.582454, 0.629324)
+shape = SubResource("CylinderShape3D_32on6")

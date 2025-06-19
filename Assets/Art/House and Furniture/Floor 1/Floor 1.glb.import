@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Floor 1.glb-756f6fcdd6ba014ab36bc2549b03f073.
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

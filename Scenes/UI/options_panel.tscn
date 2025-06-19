@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://ghku3nt2r3mc"]
+
+[ext_resource type="Script" uid="uid://d1b6rcyk37ukn" path="res://Scenes/UI/options_panel.gd" id="1_8ogtw"]
+[ext_resource type="PackedScene" uid="uid://blldqjad8wb1r" path="res://Scenes/UI/volume_slider.tscn" id="2_2h6k6"]
+[ext_resource type="PackedScene" uid="uid://thqkgr28nn37" path="res://Scenes/UI/setting_toggle.tscn" id="3_2h6k6"]
+
+[node name="OptionsPanel" type="Panel"]
+custom_minimum_size = Vector2(500, 800)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ogtw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -91.0
+offset_right = 100.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VolumeSlider" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_2h6k6")]
+layout_mode = 2
+
+[node name="VolumeSlider2" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_2h6k6")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="VolumeSlider3" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_2h6k6")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="SettingToggle" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_2h6k6")]
+layout_mode = 2
+setting_name = "use_dither"
+setting_description = "Dithering"
+
+[node name="SettingToggle2" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_2h6k6")]
+layout_mode = 2
+setting_name = "use_quantize"
+setting_description = "Quantization"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+text = "Back to Main Menu"

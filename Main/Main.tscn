@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://63x118b4yxow"]
+
+[sub_resource type="MeshLibrary" id="MeshLibrary_2degd"]
+
+[node name="Main" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = SubResource("MeshLibrary_2degd")

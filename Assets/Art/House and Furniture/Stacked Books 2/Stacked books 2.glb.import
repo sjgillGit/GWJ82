@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Stacked books 2.glb-21c533c612c8ebeb8f03c8747
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

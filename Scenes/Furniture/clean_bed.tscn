@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwmvmwhm5ic8s"]
+
+[ext_resource type="PackedScene" uid="uid://b3nm00wkhqry8" path="res://Assets/Art/House and Furniture/Bed (Clean)/clean Bed.glb" id="1_mba7g"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_48jfu"]
+points = PackedVector3Array(-0.336253, 0.345538, -0.682658, 0.440229, 0.17489, 0.732952, 0.416051, -0.0198, 0.692233, -0.430152, 0.17489, 0.732952, -0.405975, -0.0198, -0.692233, 0.416051, -0.0198, -0.692233, 0.302719, 0.381033, -0.641262, -0.405975, -0.0198, 0.692233, 0.440229, 0.289343, -0.641262, -0.384316, 0.197773, 0.732952, -0.430152, 0.289343, -0.641262, -0.315476, 0.381033, -0.641262, 0.394392, 0.197773, 0.732952, 0.411511, 0.28179, -0.684585, -0.409123, 0.283812, -0.697535, 0.394392, 0.335148, -0.641262, -0.361398, 0.358111, -0.641262, 0.276417, 0.362819, -0.66819, 0.363521, 0.322441, -0.674837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fy67n"]
+points = PackedVector3Array(-0.0591516, -0.224052, -0.0789516, 0.879776, 0.2014, 0.0677559, 0.859121, 0.192041, -0.0714, 0.907452, -0.224052, -0.0789516, 0.890786, -0.2165, 0.0694762, -0.0314761, 0.2014, 0.0677559, -0.042486, -0.2165, 0.0694762, -0.0108215, 0.192041, -0.0714)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0dq3j"]
+points = PackedVector3Array(-0.0591516, -0.318652, -0.0789516, 0.890158, 0.2895, 0.0693781, 0.859121, 0.269617, -0.0714, 0.907452, -0.318652, -0.0789516, 0.895664, -0.3111, 0.0702383, -0.0418583, 0.2895, 0.0693781, -0.0473637, -0.3111, 0.0702383, -0.0108215, 0.269617, -0.0714)
+
+[node name="clean Bed" instance=ExtResource("1_mba7g")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_48jfu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_fy67n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_0dq3j")
