@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://um14l2k3rwvw"]
+[gd_scene load_steps=6 format=3 uid="uid://um14l2k3rwvw"]
 
 [ext_resource type="PackedScene" uid="uid://c3klm2244mxqo" path="res://Assets/Art/Traps/Pumpkin/Pumpkin.glb" id="1_3ydib"]
-[ext_resource type="Script" uid="uid://cjaptx8syxj5u" path="res://Scripts/trap.gd" id="2_y2tah"]
+[ext_resource type="Script" uid="uid://bjhwnoyw4n12s" path="res://Scripts/area_trap.gd" id="2_y2tah"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3ydib"]
 radius = 0.536616
@@ -9,8 +9,13 @@ radius = 0.536616
 [sub_resource type="BoxShape3D" id="BoxShape3D_y2tah"]
 size = Vector3(3, 1, 0.75)
 
-[node name="Pumpkin" node_paths=PackedStringArray("highlight_meshes") instance=ExtResource("1_3ydib")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_d876r"]
+size = Vector3(1, 1.5791, 1.27454)
+
+[node name="Pumpkin" node_paths=PackedStringArray("trigger_area", "kill_area", "highlight_meshes") instance=ExtResource("1_3ydib")]
 script = ExtResource("2_y2tah")
+trigger_area = NodePath("DetectArea")
+kill_area = NodePath("KillArea")
 trigger_animation_name = "Attack_long"
 highlight_meshes = [NodePath("Armature/Skeleton3D/Sphere_005"), NodePath("Armature/Skeleton3D/Plane_003")]
 
@@ -37,11 +42,17 @@ bones/20/rotation = Quaternion(0.152799, 3.24756e-08, -0.00124363, 0.988257)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0298031, 0.351588, -0.000499994)
 shape = SubResource("SphereShape3D_3ydib")
 
-[node name="Area3D" type="Area3D" parent="." index="3"]
+[node name="DetectArea" type="Area3D" parent="." index="3"]
 collision_layer = 0
 collision_mask = 2
 
-[node name="MotionDetection" type="CollisionShape3D" parent="Area3D" index="0"]
+[node name="MotionDetection" type="CollisionShape3D" parent="DetectArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.367, 0)
 shape = SubResource("BoxShape3D_y2tah")
 debug_color = Color(0.993041, 0, 0.243444, 0.42)
+
+[node name="KillArea" type="Area3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967119, 1.12352)
+shape = SubResource("BoxShape3D_d876r")

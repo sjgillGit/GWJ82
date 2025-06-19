@@ -8,6 +8,9 @@ func _ready():
 	_refresh_luck()
 
 func _refresh_luck():
+	# TODO - This will be changed when we get luck sprites
+	for i in get_child_count():
+		get_child(i).queue_free()
 	for i in range(StatTracker.luck):
 		var luck_icon = TextureRect.new()
 		luck_icon.texture = luck_texture
