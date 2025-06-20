@@ -54,7 +54,7 @@ var _vertical_velocity := Vector3.ZERO
 
 @onready var _camera: Camera3D = $CameraOffset/Camera3D
 @onready var _raycast: RayCast3D = $CameraOffset/Camera3D/RayCast3D
-@onready var _hotbar: Hotbar = $Hotbar
+@onready var _hotbar: Hotbar = $CameraOffset/Camera3D/Hotbar
 
 
 

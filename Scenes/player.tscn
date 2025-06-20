@@ -120,7 +120,7 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 theme_override_constants/separation = 16
 script = ExtResource("6_3smsa")
-hotbar = NodePath("../../../../../Hotbar")
+hotbar = NodePath("../../../Hotbar")
 
 [node name="OptionsPanel" parent="CameraOffset/Camera3D/Control" instance=ExtResource("9_pu2lt")]
 visible = false
@@ -137,10 +137,7 @@ offset_bottom = 400.0
 
 [node name="Player model" parent="CameraOffset/Camera3D" instance=ExtResource("3_6t5aa")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.8, 0)
-script = ExtResource("2_cvnsp")
 
-[node name="Hotbar" type="Node3D" parent="."]
+[node name="Hotbar" type="Node3D" parent="CameraOffset/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
 script = ExtResource("2_cvnsp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
