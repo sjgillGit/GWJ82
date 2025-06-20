@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 # To be used differently by all classes extending Interactible
-func interact(item: PickableItem):
+func interact(_item: PickableItem):
 	pass
 
 func highlight(_item: PickableItem = null) -> void:

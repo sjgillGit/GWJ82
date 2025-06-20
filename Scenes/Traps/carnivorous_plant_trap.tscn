@@ -1,17 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnu6weubjshll"]
 
 [ext_resource type="PackedScene" uid="uid://bab4yle4cs3ed" path="res://Assets/Art/Traps/Carnivorus Plant/Carnivorous plant.glb" id="1_vkc08"]
-[ext_resource type="Script" uid="uid://cjaptx8syxj5u" path="res://Scripts/trap.gd" id="2_32on6"]
+[ext_resource type="Script" uid="uid://bjhwnoyw4n12s" path="res://Scripts/area_trap.gd" id="2_32on6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vkc08"]
 height = 0.219788
 radius = 0.0712891
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_32on6"]
+height = 2.51147
+radius = 0.827148
 
-[node name="Carnivorous plant" instance=ExtResource("1_vkc08")]
+[node name="Carnivorous plant" node_paths=PackedStringArray("trigger_area", "kill_area", "highlight_meshes") instance=ExtResource("1_vkc08")]
 script = ExtResource("2_32on6")
+trigger_area = NodePath("Area3D")
+kill_area = NodePath("Area3D")
 trigger_animation_name = "long_attack"
+highlight_meshes = [NodePath("Armature/Skeleton3D/Sphere_002"), NodePath("Armature/Skeleton3D/Sphere"), NodePath("Armature/Skeleton3D/NurbsPath"), NodePath("Armature/Skeleton3D/Cylinder_001"), NodePath("Armature/Skeleton3D/Cylinder"), NodePath("Armature/Skeleton3D/Cube_002"), NodePath("Armature/Skeleton3D/Cube_001"), NodePath("Armature/Skeleton3D/Cube")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/scale = Vector3(0.0409124, 0.0409124, 0.0409124)
@@ -47,5 +52,5 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.582454, 0.629324)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23834, 1.08829)
 shape = SubResource("CylinderShape3D_32on6")
