@@ -9,12 +9,12 @@
 [ext_resource type="Script" uid="uid://dsyda8ureutpn" path="res://Scenes/UI/luck_container.gd" id="4_x3wgy"]
 [ext_resource type="Script" uid="uid://dqrlqnqwh5xeu" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
 [ext_resource type="Shader" uid="uid://onvchygpcv55" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
-[ext_resource type="Texture2D" uid="uid://buxggk37pr3t0" path="res://Assets/Art/UI/clover_stem.png" id="7_gymyn"]
 [ext_resource type="Texture2D" uid="uid://cdsrcxgo6vbf0" path="res://Assets/Art/UI/clover_5.png" id="8_h4iuc"]
 [ext_resource type="Texture2D" uid="uid://bigkyeg23hr1w" path="res://Assets/Art/UI/Clover_4_stem.png" id="8_pu2lt"]
-[ext_resource type="Texture2D" uid="uid://bm45t6cho80xj" path="res://Assets/Art/UI/clover_2.png" id="9_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://dq4ag6hf5foxg" path="res://Assets/Art/UI/1_leaf_clover.png" id="9_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://dperrbsr6j77s" path="res://Assets/Art/UI/2_leaf_clover.png" id="9_h4iuc"]
 [ext_resource type="PackedScene" uid="uid://ghku3nt2r3mc" path="res://Scenes/UI/options_panel.tscn" id="9_pu2lt"]
-[ext_resource type="Texture2D" uid="uid://ci10xaig2fam0" path="res://Assets/Art/UI/clover_1.png" id="10_qqcod"]
+[ext_resource type="Texture2D" uid="uid://thm87lssdhn8" path="res://Assets/Art/UI/stem.png" id="10_h4iuc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
@@ -105,9 +105,9 @@ theme_override_constants/separation = 16
 script = ExtResource("4_x3wgy")
 four_luck = ExtResource("8_pu2lt")
 three_luck = ExtResource("8_h4iuc")
-two_luck = ExtResource("9_fd4e3")
-one_luck = ExtResource("10_qqcod")
-zero_luck = ExtResource("7_gymyn")
+two_luck = ExtResource("9_h4iuc")
+one_luck = ExtResource("9_7dp3o")
+zero_luck = ExtResource("10_h4iuc")
 
 [node name="LuckTexture" type="TextureRect" parent="CameraOffset/Camera3D/Control/LuckMarginContainer/LuckContainer"]
 unique_name_in_owner = true
