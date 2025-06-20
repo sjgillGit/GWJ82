@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c21ev0jfmcjf"
-path.s3tc="res://.godot/imported/Chair 1_chair.png-33828d740a674f59bcfb510aa48ec40e.s3tc.ctex"
+uid="uid://bowjownue2n7u"
+path.s3tc="res://.godot/imported/Clean stool_clean stool.png-2ea936abad6abaffff5bcf6edd1d96de.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0e87fc478d7c0930100def3bde1e7712"
+"md5": "d96425afffc18ca52abb6d9f274f46ca"
 }
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Chair 1/Chair 1_chair.png"
-dest_files=["res://.godot/imported/Chair 1_chair.png-33828d740a674f59bcfb510aa48ec40e.s3tc.ctex"]
+source_file="res://Assets/Art/House and Furniture/Stool/Clean stool_clean stool.png"
+dest_files=["res://.godot/imported/Clean stool_clean stool.png-2ea936abad6abaffff5bcf6edd1d96de.s3tc.ctex"]
 
 [params]
 

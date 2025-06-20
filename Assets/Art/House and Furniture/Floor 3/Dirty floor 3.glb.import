@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1gb8p2pr4h0k"
-path="res://.godot/imported/Chair 2.glb-b0b257c005c62a1be7a1a374a5d91c0c.scn"
+uid="uid://dhg082ltna60h"
+path="res://.godot/imported/Dirty floor 3.glb-780cf6c5e7f8ab70eea784b1d4028847.scn"
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Chair 2/Chair 2.glb"
-dest_files=["res://.godot/imported/Chair 2.glb-b0b257c005c62a1be7a1a374a5d91c0c.scn"]
+source_file="res://Assets/Art/House and Furniture/Floor 3/Dirty floor 3.glb"
+dest_files=["res://.godot/imported/Dirty floor 3.glb-780cf6c5e7f8ab70eea784b1d4028847.scn"]
 
 [params]
 
-nodes/root_type="MeshInstance3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

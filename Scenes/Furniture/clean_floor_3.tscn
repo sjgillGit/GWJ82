@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=4 uid="uid://bcgujiet8cs3c"]
+
+[ext_resource type="Texture2D" uid="uid://8ud17duqy1li" path="res://Assets/Art/House and Furniture/Floor 3/Floor 3_Floor 3.png" id="1_ow7uq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xonv"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_ow7uq")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vdg8v"]
+_surfaces = [{
+"aabb": AABB(-1.5645, -0.0265312, -1.5645, 3.129, 0.0530624, 3.129),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("CAACAAkACAAAAAIAAAABAAIAAgAKAAkAAgABAAoAAAAGAAEABgAKAAEACAAGAAAABgALAAoACAALAAYAAwAJAAoACAAJAAMAAwAKAAQACAADAAUABQADAAQACAAHAAsACAAFAAcABwAKAAsABQAEAAcABwAEAAoA"),
+"lods": [0.000263678, PackedByteArray("AAABAAIAAwACAAEAAAACAAMAAwABAAQAAAADAAUABQADAAQAAAAGAAEABQAEAAcAAAAFAAcABwAEAAEAAAAHAAYABwABAAYA")],
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAAAAAAD///////8AAP////8AAAAAAAD//wAAAAAAAP////8AAAAAAAAAAAAA//8AAP//AAAAAAAA//8AAP9/AAAAAAAA/3///wAAAAD/f/////8AAP9/AAD//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0rvj2"]
+resource_name = "Floor 3_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1.5645, -0.0265312, -1.5645, 3.129, 0.0530624, 3.129),
+"attribute_data": PackedByteArray("qqqpqlVV//9VVamqqqr//1VVVFVVVamqVVVUVVVVqaqqqqmqVVX//6qq//9VVamqAAAAAAAAVFUAAFRVAAAAAKqqAACqqlRVqqpUVaqqAACqqlRVVVVUVaqqVFVVVVRVqipUVaoqqaqqKgAAqipUVf9/VFX/fwAAVFX/f6qq/38="),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("GAAHABkAGAAEAAcAGAAZAAUAGAAFAAYAAAABAAIAAAADAAEAGgAOAAwAGgAbAA4AGgANABsAGgAPAA0AEwAcAB0AEwARABwAEAAdABwAEAAcABIAFgAeABUAFgAfAB4AFAAeAB8AFAAXAB4ACAAJAAoACAALAAkA"),
+"lods": [0.000263678, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_2xonv"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("//8AAAAAVNX///////9U1f////8AAFTV//8AAP//VNX//wAAAAD//wAA//8AAAAAAAAAAAAAAAD/////AAD//wAAAAAAAKoqAAD/////qioAAAAA//+qKgAA//8AAKoq//8AAAAA//8AAAAA////P///AAD/////AAAAAAAA/z8AAP//AAAAAP////////+/AAD/////AAD/////AAD/vwAAAAD///8//////////7///wAA////vwAA//////8//38AAAAAAAD/f///AAAAAP9/AAAAAP8//38AAP///z//f/////8AAP9///8AAAAA/3///////z//fwAA////P6qqVFWqqlRVqqpUVaqqVFX///9//3////9///////9/VFWqqlRVqqpUVaqqVFWqqv9//z8AAP9//3//PwAA/3//f/+/////f/9//7////9//3//f/9//3//f/9//3//f/9/////f///AAD/fwAA/3//f/+//3//v/9//3//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vdg8v")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41esl"]
+size = Vector3(3.12866, 0.0585938, 3.12598)
+
+[node name="Floor 3" type="RigidBody3D"]
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_0rvj2")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_41esl")

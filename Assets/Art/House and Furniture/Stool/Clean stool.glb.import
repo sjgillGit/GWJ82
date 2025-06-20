@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cdpxgphqf2llu"
-path="res://.godot/imported/Chair 1.glb-ea52c73b637eaf40127432a19a90511c.scn"
+uid="uid://bolcwr3mwgi4t"
+path="res://.godot/imported/Clean stool.glb-301bb625bd49d824287384da21f217fa.scn"
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Chair 1/Chair 1.glb"
-dest_files=["res://.godot/imported/Chair 1.glb-ea52c73b637eaf40127432a19a90511c.scn"]
+source_file="res://Assets/Art/House and Furniture/Stool/Clean stool.glb"
+dest_files=["res://.godot/imported/Clean stool.glb-301bb625bd49d824287384da21f217fa.scn"]
 
 [params]
 
-nodes/root_type="MeshInstance3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

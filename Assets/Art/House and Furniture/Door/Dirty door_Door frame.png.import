@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg4uegk3fpmlg"
-path.s3tc="res://.godot/imported/Chair 2_stool.png-e40a0d0e283c2e2a3fa831200bebe48e.s3tc.ctex"
+uid="uid://donrjue8lfyhp"
+path.s3tc="res://.godot/imported/Dirty door_Door frame.png-3dcb41935a5dff53376a5542ba754de6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "467a3c5d21901b74f265321d3508d385"
+"md5": "975f7ad6e993a062baca5934b488ec59"
 }
 
 [deps]
 
-source_file="res://Assets/Art/House and Furniture/Chair 2/Chair 2_stool.png"
-dest_files=["res://.godot/imported/Chair 2_stool.png-e40a0d0e283c2e2a3fa831200bebe48e.s3tc.ctex"]
+source_file="res://Assets/Art/House and Furniture/Door/Dirty door_Door frame.png"
+dest_files=["res://.godot/imported/Dirty door_Door frame.png-3dcb41935a5dff53376a5542ba754de6.s3tc.ctex"]
 
 [params]
 
