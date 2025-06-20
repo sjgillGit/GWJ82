@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjtsppxp5qe3l"]
+[gd_scene load_steps=13 format=3 uid="uid://cjtsppxp5qe3l"]
 
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://da00h62n0ginr" path="res://Scenes/UI/shader_overlay.gd" id="3_gymyn"]
 [ext_resource type="Script" uid="uid://dgwkt51ixucg7" path="res://Scenes/UI/interact_label.gd" id="3_vgqql"]
 [ext_resource type="Script" uid="uid://dsyda8ureutpn" path="res://Scenes/UI/luck_container.gd" id="4_x3wgy"]
-[ext_resource type="Texture2D" uid="uid://do2kichd5ohxn" path="res://Scenes/UI/luck_placeholder.tres" id="5_3smsa"]
 [ext_resource type="Script" uid="uid://dqrlqnqwh5xeu" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
 [ext_resource type="Shader" uid="uid://onvchygpcv55" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
 [ext_resource type="PackedScene" uid="uid://ghku3nt2r3mc" path="res://Scenes/UI/options_panel.tscn" id="9_pu2lt"]
@@ -88,19 +87,20 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -32.0
-offset_right = 32.0
+offset_top = -64.0
+offset_right = 64.0
 grow_vertical = 0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_bottom = 32
 
 [node name="LuckContainer" type="HBoxContainer" parent="CameraOffset/Camera3D/Control/LuckMarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 script = ExtResource("4_x3wgy")
-luck_texture = ExtResource("5_3smsa")
+
+[node name="LuckTexture" type="TextureRect" parent="CameraOffset/Camera3D/Control/LuckMarginContainer/LuckContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="HotbarMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
 layout_mode = 1
@@ -125,11 +125,6 @@ hotbar = NodePath("../../../Hotbar")
 [node name="OptionsPanel" parent="CameraOffset/Camera3D/Control" instance=ExtResource("9_pu2lt")]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -250.0
 offset_top = -400.0
 offset_right = 250.0
