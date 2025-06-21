@@ -2,7 +2,7 @@ class_name Interactible extends RigidBody3D
 
 # Add all meshes you would like to be highlighted here
 @export var highlight_meshes: Array[MeshInstance3D]
-#change this later - Jecht
+
 
 var outline_resource = preload("res://Scripts/Shaders/target_outline.tres")
 # VARIABLES -------
@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 # To be used differently by all classes extending Interactible
-func interact(item: PickableItem):
+func interact(_item: PickableItem):
 	pass
 
 func highlight(_item: PickableItem = null) -> void:

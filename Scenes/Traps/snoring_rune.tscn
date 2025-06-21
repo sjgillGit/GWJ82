@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf46jjo5e4vug"]
+
+[ext_resource type="PackedScene" uid="uid://cwcf2wtthw1d6" path="res://Assets/Art/Runes/Snoring Runes/Snoring rune.glb" id="1_3uhlu"]
+[ext_resource type="Script" uid="uid://cyoppg8flsjtu" path="res://Scripts/interaction_trap.gd" id="2_0adsc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3uhlu"]
+size = Vector3(0.513184, 1, 0.498535)
+
+[node name="SnoringRune" node_paths=PackedStringArray("kill_area") instance=ExtResource("1_3uhlu")]
+script = ExtResource("2_0adsc")
+kill_area = NodePath("Trigger")
+
+[node name="Trigger" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032959, 0.685187, 0.0601997)
+shape = SubResource("BoxShape3D_3uhlu")
+debug_color = Color(0.99684, 0, 0.17867, 0.42)

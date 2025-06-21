@@ -46,5 +46,4 @@ offset_top = -23.0
 offset_right = 261.0
 grow_vertical = 0
 text = "(Disable to improve performance)"
-horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2

@@ -16,7 +16,6 @@ size = Vector3(0.2, 0.2, 0.2)
 [node name="BlockItem" type="RigidBody3D"]
 collision_layer = 4
 script = ExtResource("1_06hl0")
-hold_position = Vector3(0.4, 0.5, -0.4)
 metadata/_custom_type_script = "uid://cmmupq7303dd8"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

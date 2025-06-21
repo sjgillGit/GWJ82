@@ -1,9 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://jkacyy17oc4u"]
+[gd_scene load_steps=13 format=3 uid="uid://jkacyy17oc4u"]
 
 [ext_resource type="Texture2D" uid="uid://d2jpi7vnw5651" path="res://Assets/MainMenu/mainmenu_bg.jpg" id="1_ce3w2"]
+[ext_resource type="Theme" uid="uid://dkfp2kcatfr8h" path="res://Scenes/UI/main_menu_theme.tres" id="1_n45e2"]
 [ext_resource type="Script" uid="uid://lk61dhumwd4o" path="res://Scenes/UI/menu_options.gd" id="2_n45e2"]
+[ext_resource type="Shader" uid="uid://doidgqui6208f" path="res://Scripts/Shaders/main_menu.gdshader" id="3_cp0ys"]
 [ext_resource type="PackedScene" uid="uid://b7agr4qv0d2wk" path="res://Scenes/Test/3d_test.tscn" id="3_opfnp"]
 [ext_resource type="PackedScene" uid="uid://ghku3nt2r3mc" path="res://Scenes/UI/options_panel.tscn" id="4_cp0ys"]
+[ext_resource type="Script" uid="uid://dshsiltkmrt63" path="res://Scenes/UI/credits_panel.gd" id="6_cp0ys"]
+
+[sub_resource type="Gradient" id="Gradient_yhxw7"]
+colors = PackedColorArray(0.611765, 0.113725, 0.231373, 0.501961, 0.94902, 0.454902, 0.176471, 0.501961)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_opfnp"]
+noise_type = 3
+fractal_type = 2
+fractal_lacunarity = 0.585
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_16hvj"]
+width = 2000
+height = 2000
+generate_mipmaps = false
+seamless = true
+color_ramp = SubResource("Gradient_yhxw7")
+noise = SubResource("FastNoiseLite_opfnp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vr1f0"]
+shader = ExtResource("3_cp0ys")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_16hvj")
+shader_parameter/scale = 0.925
+shader_parameter/upward_speed = 0.0
+shader_parameter/wave_amplitude = 0.035
+shader_parameter/wave_frequency = 10.0
+shader_parameter/shimmer_intensity = 0.05
+shader_parameter/alpha = 0.1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1owsv"]
 
@@ -14,6 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_n45e2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -24,6 +55,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ce3w2")
 expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vr1f0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MenuOptions" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -57,17 +97,62 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_1owsv")
 [node name="PlayButton" type="Button" parent="MenuOptions"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Play"
 
 [node name="SettingsButton" type="Button" parent="MenuOptions"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="MenuOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Credits"
 
 [node name="ExitButton" type="Button" parent="MenuOptions"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Exit"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(500, 800)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+
+[node name="CreditsPanel" type="PanelContainer" parent="MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("6_cp0ys")
+
+[node name="Panel" type="Panel" parent="MarginContainer2/CreditsPanel"]
+layout_mode = 2
+
+[node name="CreditVBox" type="VBoxContainer" parent="MarginContainer2/CreditsPanel/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

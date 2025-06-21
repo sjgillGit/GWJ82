@@ -10,6 +10,8 @@ signal luck_changed
 # Set score to zero
 func reset():
 	score = 0
+	luck = 4
+	
 # Return a grade (A,B,C,D,E,F) from score
 func evaluate_score():
 	if score > 99:
