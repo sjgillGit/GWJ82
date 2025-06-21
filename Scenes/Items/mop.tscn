@@ -14,20 +14,22 @@ axis_lock_angular_z = true
 script = ExtResource("2_jdfcm")
 highlight_meshes = [NodePath("Armature/Skeleton3D/NurbsPath"), NodePath("Armature/Skeleton3D/Sphere_004")]
 
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(0.0700408, 0.0399547, 0.00433456, -0.0394128, 0.0699908, -0.00829461, -0.00786096, 0.00507881, 0.0802078, 0, 0, 0)
+
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(-3.04435, -3.66803, 2.39872)
-bones/0/rotation = Quaternion(0.287088, -0.627066, 0.0213342, 0.723819)
+bones/0/position = Vector3(0.0134288, -2.69539, 0.17199)
+bones/0/rotation = Quaternion(-0.00961179, -2.52338e-08, 0.054269, 0.99848)
 bones/1/rotation = Quaternion(0.00185563, 0.02323, -0.208396, 0.977767)
 bones/2/rotation = Quaternion(-0.0753485, -0.0819873, 0.554387, 0.824776)
-bones/3/rotation = Quaternion(0.0314656, 0.00135976, -0.0443809, 0.998518)
+bones/3/rotation = Quaternion(0.0314656, 0.00135977, -0.0443809, 0.998518)
 bones/4/rotation = Quaternion(0.0468496, -0.00377254, -0.104169, 0.993448)
-bones/5/rotation = Quaternion(-0.00324768, 0.00624274, 0.0765542, 0.997041)
-bones/6/rotation = Quaternion(0.0670944, -0.0834463, -0.527821, 0.84258)
-bones/7/rotation = Quaternion(-0.0045976, -0.0747841, -0.315109, 0.946093)
-bones/8/position = Vector3(-3.04435, -3.66803, 2.39872)
-bones/8/rotation = Quaternion(-0.272664, -0.0449399, 0.944566, -0.177287)
-bones/9/rotation = Quaternion(-0.00053012, 0.00189076, -0.00258852, 0.999995)
+bones/5/rotation = Quaternion(-0.00324768, 0.00624273, 0.0765543, 0.997041)
+bones/6/rotation = Quaternion(0.0670943, -0.0834463, -0.527821, 0.84258)
+bones/7/rotation = Quaternion(-0.00459761, -0.0747841, -0.315109, 0.946093)
+bones/8/position = Vector3(0.0134289, -2.69539, 0.17199)
+bones/8/rotation = Quaternion(0.438496, 0.165608, 0.860162, -0.201041)
+bones/9/rotation = Quaternion(-0.000530118, 0.00189073, -0.00258852, 0.999995)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.282649, 0.132408, 0.396279)
 shape = SubResource("CapsuleShape3D_jdfcm")
