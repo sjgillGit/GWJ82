@@ -54,9 +54,10 @@ var _walk_velocity := Vector3.ZERO
 # Current vertical velocity due to gravity/jumping (only y)
 var _vertical_velocity := Vector3.ZERO
 
-@onready var _camera: Camera3D = $CameraOffset/Camera3D
-@onready var _raycast: RayCast3D = $CameraOffset/Camera3D/RayCast3D
-@onready var _hotbar: Hotbar = %Hotbar
+@onready var _camera_offset: Node3D = $CameraOffset
+@onready var _raycast: RayCast3D = $CameraOffset/RayCast3D
+@onready var _hotbar: Hotbar = $CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D/RightArm/Hotbar
+@onready var _player_model = $CameraOffset/PlayerModel
 
 #walks sounds for the player
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
@@ -135,7 +136,7 @@ func _update_raycast_hit() -> void:
 func _get_walk_velocity(delta: float) -> Vector3:
 	# Get input and set walk direction
 	var walk_input := Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_back")
-	var walk_direction = _camera.transform.basis * Vector3(walk_input.x, 0, walk_input.y)
+	var walk_direction = _camera_offset.transform.basis * Vector3(walk_input.x, 0, walk_input.y)
 	walk_direction = (walk_direction * Vector3(1, 0, 1)).normalized()
 	# Update walk velocity using walk/run speed and ground/air acceleration
 	_walk_velocity = _walk_velocity.move_toward(
@@ -185,16 +186,16 @@ func _update_camera_bob(delta: float) -> void:
 		_bob_progress = 0.0 # reset if not moving or in the air
 	
 	# Move the camera bob closer to the target value and update the position
-	_camera.position.y = move_toward(_camera.position.y, target_bob_offset,
+	_camera_offset.position.y = move_toward(_camera_offset.position.y, target_bob_offset,
 			camera_bob_acceleration * delta)
 
 
 # Resolves pending rotation by applying it to the camera rotation property.
 func _update_camera_rotation() -> void:
 	# Clamp vertical rotation to a min/max
-	_camera.rotation.x = clampf(_camera.rotation.x + _pending_camera_rotation.x, -1.5, 1.5)
+	_camera_offset.rotation.x = clampf(_camera_offset.rotation.x + _pending_camera_rotation.x, -1.5, 1.5)
 	# Also update hotbar rotation to match camera
-	_camera.rotation.y += _pending_camera_rotation.y
+	_camera_offset.rotation.y += _pending_camera_rotation.y
 	# Reset pending rotation to zero
 	_pending_camera_rotation = Vector2.ZERO
 
@@ -202,6 +203,18 @@ func _update_camera_rotation() -> void:
 # Returns true if the player is moving horizontally (may be in the air or on the ground).
 func _is_moving_horizontally() -> bool:
 	return _walk_velocity.length() > 0
+#endregion
+
+
+#region Animation
+## Animates player death using ragdoll animation. Also disables player input.
+## The player is invalid after calling this function and a new one must be
+## instantiated to respawn the player. [param impulse] is an impulse to apply to
+## the player's torso when starting the animation.
+func die(impulse: Vector3) -> void:
+	_player_model.ragdoll_animation(impulse)
+	set_process_unhandled_input(false)
+	set_physics_process(false)
 #endregion
 
 
