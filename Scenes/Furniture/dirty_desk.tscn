@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dwpjsoklfc67e"]
+[gd_scene load_steps=10 format=4 uid="uid://0y4xdlsvcpcr"]
 
 [ext_resource type="Texture2D" uid="uid://bb46o36j6hh7q" path="res://Assets/Art/House and Furniture/Desk/Desk_Desk 1.png" id="1_cmqsg"]
+[ext_resource type="Script" uid="uid://dcjr6vcc1857c" path="res://Scripts/cleanable.gd" id="1_skyn7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv50c"]
 resource_name = "Material.002"
@@ -82,6 +83,7 @@ size = Vector3(0.345581, 0.222168, 0.207153)
 size = Vector3(1.09674, 0.542023, 0.231476)
 
 [node name="Desk" type="RigidBody3D"]
+script = ExtResource("1_skyn7")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0823016, 0)

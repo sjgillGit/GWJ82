@@ -119,8 +119,9 @@ func _update_raycast_hit() -> void:
 	var new_raycast_hit: Object = _raycast.get_collider()
 	if new_raycast_hit != self.raycast_hit:
 		# Update object highlights
-		if self.raycast_hit is Interactible:
+		if is_instance_valid(self.raycast_hit) and self.raycast_hit is Interactible:
 			self.raycast_hit.unhighlight()
+
 		if new_raycast_hit is Interactible:
 			new_raycast_hit.highlight(_hotbar.selected_item)
 		
@@ -226,11 +227,13 @@ func interact() -> void:
 	# Try to pick up a pickable item first
 	if collider is PickableItem:
 		grab_item(collider)
+	elif collider is Portal:
+		collider.interact(self)
 	# Next, try to interact with hand interactible object
 	elif collider is Interactible and collider.hand_interactible:
 		collider.interact(null)
 	# Next, try to interact using the tool on the interactible if the selected item uses raycast
-	elif collider is Interactible and _hotbar.selected_item != null and \
+	elif collider is Cleanable and _hotbar.selected_item != null and \
 			_hotbar.selected_item.use_player_raycast:
 		collider.interact(_hotbar.selected_item)
 	# Finally, try to use a shape cast on the selected item 

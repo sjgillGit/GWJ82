@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://dyw7rpq2rcdlj"]
+[gd_scene load_steps=7 format=4 uid="uid://cs7ol2tybc0pw"]
 
 [ext_resource type="Texture2D" uid="uid://biaob5uc8dhcr" path="res://Assets/Art/House and Furniture/Floor 3/Dirty floor 3_Floor 2.png" id="1_dv22q"]
+[ext_resource type="Script" uid="uid://dcjr6vcc1857c" path="res://Scripts/cleanable.gd" id="1_jhk43"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rweyp"]
 resource_name = "Material"
@@ -45,6 +46,7 @@ shadow_mesh = SubResource("ArrayMesh_tw8kp")
 size = Vector3(3.12866, 0.0585938, 3.12598)
 
 [node name="Dirty floor 3" type="RigidBody3D"]
+script = ExtResource("1_jhk43")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_jhk43")

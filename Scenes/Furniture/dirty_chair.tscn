@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://d3id3diugmx6g"]
+[gd_scene load_steps=8 format=4 uid="uid://b5lh1k0a2ah3h"]
 
+[ext_resource type="Script" uid="uid://dcjr6vcc1857c" path="res://Scripts/cleanable.gd" id="1_jyr64"]
 [ext_resource type="Texture2D" uid="uid://c21ev0jfmcjf" path="res://Assets/Art/House and Furniture/Chair/Chair 1_chair.png" id="1_qqext"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq7pi"]
@@ -48,6 +49,7 @@ size = Vector3(0.463135, 0.308838, 0.425659)
 size = Vector3(0.391602, 0.400879, 0.110352)
 
 [node name="dirty_chair" type="RigidBody3D"]
+script = ExtResource("1_jyr64")
 
 [node name="Cube_004" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00401771, 0.0332903, 0.0130559)

@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://efsul2tjrsom"]
+[gd_scene load_steps=4 format=3 uid="uid://efsul2tjrsom"]
 
 [ext_resource type="PackedScene" uid="uid://ctp2kki543n28" path="res://Assets/Art/House and Furniture/Coat Hanger (dirty)/Dirty coat hanger.glb" id="1_prcnv"]
+[ext_resource type="Script" uid="uid://dcjr6vcc1857c" path="res://Scripts/cleanable.gd" id="2_mn2sd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ll0b5"]
 size = Vector3(0.0732422, 1.40381, 0.0778198)
 
 [node name="Dirty coat hanger" instance=ExtResource("1_prcnv")]
-script = null
+script = ExtResource("2_mn2sd")
+clean_scene = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(-1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.00788856, 0.69967, -0.000457764)

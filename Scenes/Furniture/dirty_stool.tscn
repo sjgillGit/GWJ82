@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://ckr5iho4nvfa0"]
+[gd_scene load_steps=17 format=4 uid="uid://emuwx2vxi3wu"]
 
 [ext_resource type="Texture2D" uid="uid://bg4uegk3fpmlg" path="res://Assets/Art/House and Furniture/Stool/Chair 2_stool.png" id="1_j60eo"]
+[ext_resource type="Script" uid="uid://dcjr6vcc1857c" path="res://Scripts/cleanable.gd" id="1_n1peu"]
 [ext_resource type="Texture2D" uid="uid://clbbcf37nom0i" path="res://Assets/Art/House and Furniture/Stool/Chair 2_stool leg.png" id="2_n1peu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2h5f"]
@@ -180,6 +181,7 @@ height = 0.274414
 radius = 0.200195
 
 [node name="Dirty Stool" type="RigidBody3D"]
+script = ExtResource("1_n1peu")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0151065, 0.259821, 0.0140325)

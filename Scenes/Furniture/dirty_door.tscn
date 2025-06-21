@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://jegqb5oeklcc"]
+[gd_scene load_steps=14 format=4 uid="uid://bdqj4rgyfux56"]
 
+[ext_resource type="Script" uid="uid://dcjr6vcc1857c" path="res://Scripts/cleanable.gd" id="1_7wusn"]
 [ext_resource type="Texture2D" uid="uid://ffw4mq8ol22k" path="res://Assets/Art/House and Furniture/Door/Dirty door_Door 4.png" id="1_llwne"]
 [ext_resource type="Texture2D" uid="uid://donrjue8lfyhp" path="res://Assets/Art/House and Furniture/Door/Dirty door_Door frame.png" id="2_7wusn"]
 
@@ -126,6 +127,7 @@ shadow_mesh = SubResource("ArrayMesh_dbahw")
 size = Vector3(0.60376, 1.13623, 0.0926514)
 
 [node name="Dirty door" type="RigidBody3D"]
+script = ExtResource("1_7wusn")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274006, 0.000191003, 0.0411929)

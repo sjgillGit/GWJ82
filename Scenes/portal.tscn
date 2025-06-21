@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq4dk07j3l6h5"]
+
+[ext_resource type="Script" uid="uid://b8mt3bjx64joy" path="res://Scripts/portal.gd" id="1_j20fm"]
+
+[node name="Portal" type="RigidBody3D"]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_j20fm")

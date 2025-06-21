@@ -9,7 +9,7 @@ func _ready():
 
 func display_label(interactible):
 	var key = _get_interact_key()
-	if interactible is Interactible:
+	if interactible is Cleanable:
 		text = key + " to clean"
 		visible = true
 	elif interactible is Trap:
@@ -17,6 +17,9 @@ func display_label(interactible):
 		visible = true
 	elif interactible is PickableItem:
 		text = key + " to pick up"
+		visible = true
+	elif interactible is Portal:
+		text = key + " to walk through"
 		visible = true
 	else:
 		visible = false
