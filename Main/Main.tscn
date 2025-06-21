@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://63x118b4yxow"]
 
-[ext_resource type="PackedScene" path="res://Main/og_layout.tscn" id="1_83ytx"]
+[ext_resource type="PackedScene" uid="uid://ctgo2tyv07hj7" path="res://Main/og_layout.tscn" id="1_83ytx"]
 [ext_resource type="Script" uid="uid://dqqwfkoqu2hay" path="res://Main/main.gd" id="1_qd626"]
 [ext_resource type="PackedScene" uid="uid://cjtsppxp5qe3l" path="res://Scenes/player.tscn" id="2_amygn"]
 [ext_resource type="Environment" uid="uid://chg6o74ur0b1j" path="res://Main/3d_test.tres" id="3_amygn"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://emuwx2vxi3wu" path="res://Scenes/Furniture/dirty_stool.tscn" id="7_bor5n"]
 [ext_resource type="PackedScene" uid="uid://ffchjstoyy31" path="res://Scenes/Furniture/dirty_bed.tscn" id="8_wltqy"]
 [ext_resource type="PackedScene" uid="uid://bdqj4rgyfux56" path="res://Scenes/Furniture/dirty_door.tscn" id="9_bor5n"]
-[ext_resource type="PackedScene" path="res://Scenes/Traps/ambush_rune.tscn" id="10_wltqy"]
-[ext_resource type="PackedScene" path="res://Scenes/Traps/snoring_rune.tscn" id="11_kf8jr"]
+[ext_resource type="PackedScene" uid="uid://bu5qmao1ohb3c" path="res://Scenes/Traps/ambush_rune.tscn" id="10_wltqy"]
+[ext_resource type="PackedScene" uid="uid://cf46jjo5e4vug" path="res://Scenes/Traps/snoring_rune.tscn" id="11_kf8jr"]
 [ext_resource type="PackedScene" uid="uid://bwgxfps3es1cs" path="res://Scenes/Items/mop.tscn" id="12_kmnsd"]
 [ext_resource type="PackedScene" uid="uid://dq4dk07j3l6h5" path="res://Scenes/portal.tscn" id="13_h5g1y"]
 
@@ -50,19 +50,20 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 
 [node name="Desk" parent="." instance=ExtResource("6_qg80j")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 17.7409, 0.0631535, -0.776173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7409, 0.0631535, -0.776173)
 lock_rotation = true
 
 [node name="Dirty Stool" parent="." instance=ExtResource("7_bor5n")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.6223, 0.0624218, 0.554798)
-lock_rotation = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6223, 0.0624218, 0.554798)
+freeze = true
 
 [node name="dirty Bed" parent="." instance=ExtResource("8_wltqy")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 19.3529, 0.258401, 16.2622)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3529, 0.258401, 16.2622)
 lock_rotation = true
 
 [node name="Dirty door" parent="." instance=ExtResource("9_bor5n")]
-transform = Transform3D(4.90892, 0, -0.950018, 0, 5, 0, 0.950018, 0, 4.90892, -34.3773, 1.51204, 71.0043)
+transform = Transform3D(0.981783, 0, -0.190003, 0, 1, 0, 0.190003, 0, 0.981783, -34.3773, 1.51204, 71.0043)
+freeze = true
 
 [node name="Ambush rune" parent="." instance=ExtResource("10_wltqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6682, 2.00576, 23.775)
