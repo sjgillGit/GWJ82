@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://cjtsppxp5qe3l"]
+[gd_scene load_steps=48 format=4 uid="uid://cjtsppxp5qe3l"]
 
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
@@ -5766,6 +5766,19 @@ shader_parameter/use_quantize = true
 shader_parameter/dither_strength = 0.15
 shader_parameter/use_dithering = true
 
+[sub_resource type="Gradient" id="Gradient_h4iuc"]
+offsets = PackedFloat32Array(0, 0.625, 0.6875, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.375, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 16
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fd4e3"]
+gradient = SubResource("Gradient_h4iuc")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 3
@@ -6066,12 +6079,12 @@ skin = SubResource("Skin_cnyb3")
 [node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D"]
 
 [node name="Torso" type="PhysicalBone3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(7.3612, -0.504728, 0.977626, 1.10023, 3.37694, -6.54091, 5.67069e-08, 6.61357, 3.41445, -1.18241, 1.45901, -0.757778)
+transform = Transform3D(7.3612, -0.504728, 0.977626, 1.10023, 3.37694, -6.54092, 5.67068e-08, 6.61357, 3.41445, -1.18871, 1.45901, -0.751577)
 collision_layer = 8
 collision_mask = 9
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00110009, -0.000534549, 0.222968)
-body_offset = Transform3D(7.44297, -1.60933e-06, -1.01328e-06, -1.19209e-07, 3.41445, -6.61357, 1.79846e-06, 6.61357, 3.41445, -0.00818771, 1.47644, -0.757778)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00193696, -0.00133238, 0.222697)
+body_offset = Transform3D(7.44297, -1.60933e-06, -1.01328e-06, -1.19209e-07, 3.41445, -6.61357, 1.79846e-06, 6.61357, 3.41445, -0.0144165, 1.47737, -0.751577)
 bone_name = "Bone"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -6082,12 +6095,12 @@ transform = Transform3D(0.996834, 0.00426708, 0.0793959, -0.0328265, -0.887397, 
 shape = SubResource("CapsuleShape3D_waurb")
 
 [node name="LeftArm" type="PhysicalBone3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(2.59029, 1.93411, -6.70428, 6.82471, 0.787024, 2.86387, 1.45311, -7.14406, -1.49955, -1.1968, 2.57407, -2.44873)
+transform = Transform3D(2.59029, 1.93414, -6.70427, 6.82471, 0.787009, 2.86387, 1.45311, -7.14405, -1.49959, -1.1968, 2.57407, -2.44873)
 collision_layer = 8
 collision_mask = 9
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47444e-06, -1.01596e-05, 0.118366)
-body_offset = Transform3D(7.44297, -1.23978e-05, -1.09673e-05, -9.29832e-06, 3.49283e-05, -7.44297, 1.27554e-05, 7.44297, 3.45707e-05, 6.4373e-05, 0.880996, 7.15256e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47824e-06, -1.08098e-05, 0.118366)
+body_offset = Transform3D(7.44297, -1.23382e-05, -1.07288e-05, -9.05991e-06, 7.60555e-05, -7.44297, 1.26958e-05, 7.44297, 7.54595e-05, 6.4373e-05, 0.880996, 7.15256e-05)
 bone_name = "Bone.002_L"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -6102,9 +6115,9 @@ transform = Transform3D(0.825133, -0.20697, -7.39419, 6.24454, -3.96872, 0.80792
 collision_layer = 8
 collision_mask = 9
 joint_type = 1
-joint_offset = Transform3D(1, 2.08167e-17, 5.58794e-09, 0, 1, -3.72529e-09, -5.58794e-09, 3.72529e-09, 1, -1.46894e-05, 0.000512309, 0.120535)
+joint_offset = Transform3D(1, 2.08167e-17, 5.58794e-09, 0, 1, -3.72529e-09, -5.58794e-09, 3.72529e-09, 1, -1.46884e-05, 0.000512312, 0.120535)
 joint_rotation = Vector3(3.72529e-09, 5.58794e-09, 0)
-body_offset = Transform3D(7.44297, -2.67569e-05, 5.46575e-05, 5.48363e-05, -5.97835e-05, -7.44297, 2.68202e-05, 7.44297, -5.96792e-05, 0.000102758, 0.89714, -0.00380591)
+body_offset = Transform3D(7.44297, -2.67774e-05, 5.45979e-05, 5.48959e-05, -5.99623e-05, -7.44297, 2.68184e-05, 7.44297, -5.98282e-05, 0.000102758, 0.89714, -0.00380591)
 bone_name = "Bone.002"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -6119,11 +6132,11 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 
 script = ExtResource("2_cvnsp")
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(7.3612, -1.10023, -3.2784e-08, 1.10023, 7.3612, -2.45611e-09, 3.27869e-08, -2.41705e-09, 7.44297, -2.12343, 4.83476, -2.22586e-07)
+transform = Transform3D(7.3612, -1.10023, -3.27838e-08, 1.10023, 7.3612, -2.45606e-09, 3.27867e-08, -2.41706e-09, 7.44297, -2.12343, 4.83476, -2.19792e-07)
 collision_layer = 8
 collision_mask = 9
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0590976, -0.665623, 2.94632e-08)
-body_offset = Transform3D(7.44297, 0, -1.77454e-06, 0, 7.44297, -4.43636e-07, 1.77454e-06, 4.43636e-07, 7.44297, -0.439862, 4.95421, -2.8871e-08)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0590977, -0.665623, 2.90879e-08)
+body_offset = Transform3D(7.44297, 0, -1.77454e-06, 0, 7.44297, -4.43636e-07, 1.77454e-06, 4.43636e-07, 7.44297, -0.439862, 4.95421, -2.6077e-08)
 bone_name = "Bone"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D/PhysicalBone3D"]
@@ -6186,6 +6199,24 @@ vertical_alignment = 1
 script = ExtResource("3_vgqql")
 player = NodePath("../../..")
 
+[node name="CrosshairContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="TextureRect" parent="Control/CrosshairContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_fd4e3")
+
 [node name="LuckMarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 2
@@ -6244,3 +6275,5 @@ unique_name_in_owner = true
 size_flags_horizontal = 3
 texture = ExtResource("8_pu2lt")
 expand_mode = 5
+
+[connection signal="raycast_hit_changed" from="." to="Control/CrosshairContainer/Crosshair" method="_on_player_raycast_hit_changed"]
