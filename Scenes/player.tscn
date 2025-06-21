@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjtsppxp5qe3l"]
+[gd_scene load_steps=20 format=3 uid="uid://cjtsppxp5qe3l"]
 
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
@@ -7,11 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://ct0pdqsmbw3xm" path="res://Assets/Art/Player/Player model.glb" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://da00h62n0ginr" path="res://Scenes/UI/shader_overlay.gd" id="3_gymyn"]
 [ext_resource type="AudioStream" uid="uid://c8rx8nosgj27u" path="res://Assets/Sound/Player/Vent Bar GWJ 82 - Player Walk B.wav" id="3_ukyrk"]
-[ext_resource type="Script" uid="uid://cexvsvrnlhmlv" path="res://Scenes/UI/interact_label.gd" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://dgwkt51ixucg7" path="res://Scenes/UI/interact_label.gd" id="3_vgqql"]
 [ext_resource type="Script" uid="uid://dsyda8ureutpn" path="res://Scenes/UI/luck_container.gd" id="4_x3wgy"]
-[ext_resource type="Script" uid="uid://bh8mvtqp0bxiq" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
+[ext_resource type="Script" uid="uid://dqrlqnqwh5xeu" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
 [ext_resource type="Shader" uid="uid://onvchygpcv55" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
+[ext_resource type="Texture2D" uid="uid://cdsrcxgo6vbf0" path="res://Assets/Art/UI/clover_5.png" id="8_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://bigkyeg23hr1w" path="res://Assets/Art/UI/Clover_4_stem.png" id="8_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://dq4ag6hf5foxg" path="res://Assets/Art/UI/1_leaf_clover.png" id="9_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://dperrbsr6j77s" path="res://Assets/Art/UI/2_leaf_clover.png" id="9_h4iuc"]
 [ext_resource type="PackedScene" uid="uid://ghku3nt2r3mc" path="res://Scenes/UI/options_panel.tscn" id="9_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://thm87lssdhn8" path="res://Assets/Art/UI/stem.png" id="10_h4iuc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
@@ -86,12 +91,13 @@ script = ExtResource("3_vgqql")
 player = NodePath("../../../../..")
 
 [node name="LuckMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
+custom_minimum_size = Vector2(247, 332)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -64.0
-offset_right = 64.0
+offset_top = -332.0
+offset_right = 247.0
 grow_vertical = 0
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_bottom = 32
@@ -100,10 +106,18 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 theme_override_constants/separation = 16
 script = ExtResource("4_x3wgy")
+four_luck = ExtResource("8_pu2lt")
+three_luck = ExtResource("8_h4iuc")
+two_luck = ExtResource("9_h4iuc")
+one_luck = ExtResource("9_7dp3o")
+zero_luck = ExtResource("10_h4iuc")
 
 [node name="LuckTexture" type="TextureRect" parent="CameraOffset/Camera3D/Control/LuckMarginContainer/LuckContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_pu2lt")
+expand_mode = 5
 
 [node name="HotbarMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
 layout_mode = 1

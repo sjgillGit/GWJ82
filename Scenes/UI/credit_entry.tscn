@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://rac1vetr7s3"]
+
+[ext_resource type="Script" uid="uid://brp453sufr2gd" path="res://Scenes/UI/credit_entry.gd" id="1_1uuu1"]
+
+[node name="CreditEntry" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_1uuu1")
+
+[node name="UsernameLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="FullNameLabel" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+horizontal_alignment = 1
