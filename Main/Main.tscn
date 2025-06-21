@@ -44,8 +44,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7409, 0.0631535, -0.776173
 lock_rotation = true
 
 [node name="Dirty Stool" parent="." instance=ExtResource("7_bor5n")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.6223, 0.0624218, 0.554798)
-lock_rotation = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6223, 0.0624218, 0.554798)
+freeze = true
 
 [node name="dirty Bed" parent="." instance=ExtResource("8_wltqy")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 19.3529, 0.258401, 16.2622)
