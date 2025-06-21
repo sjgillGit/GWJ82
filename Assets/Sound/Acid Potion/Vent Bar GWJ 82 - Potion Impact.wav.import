@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr0h7ajm6wdlo"
+path="res://.godot/imported/Vent Bar GWJ 82 - Potion Impact.wav-514d56327733643df9ffef6638e398c0.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Acid Potion/Vent Bar GWJ 82 - Potion Impact.wav"
+dest_files=["res://.godot/imported/Vent Bar GWJ 82 - Potion Impact.wav-514d56327733643df9ffef6638e398c0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
