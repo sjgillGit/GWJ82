@@ -6066,11 +6066,11 @@ skin = SubResource("Skin_cnyb3")
 [node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D"]
 
 [node name="Torso" type="PhysicalBone3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(7.3612, -0.504728, 0.977626, 1.10023, 3.37694, -6.54092, 5.67068e-08, 6.61357, 3.41445, -1.18241, 1.45901, -0.757778)
+transform = Transform3D(7.3612, -0.504728, 0.977626, 1.10023, 3.37694, -6.54091, 5.67069e-08, 6.61357, 3.41445, -1.18241, 1.45901, -0.757778)
 collision_layer = 8
 collision_mask = 9
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00110009, -0.000534706, 0.222968)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00110009, -0.000534549, 0.222968)
 body_offset = Transform3D(7.44297, -1.60933e-06, -1.01328e-06, -1.19209e-07, 3.41445, -6.61357, 1.79846e-06, 6.61357, 3.41445, -0.00818771, 1.47644, -0.757778)
 bone_name = "Bone"
 joint_constraints/bias = 0.3
@@ -6098,11 +6098,11 @@ transform = Transform3D(0.994119, 0.0139899, 0.107379, -0.107113, -0.0185318, 0.
 shape = SubResource("CapsuleShape3D_tywhj")
 
 [node name="RightArm" type="PhysicalBone3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.825133, -0.206969, -7.39419, 6.24454, -3.96872, 0.807929, -3.96518, -6.29319, -0.266331, -1.17035, 2.82278, 1.89483)
+transform = Transform3D(0.825133, -0.20697, -7.39419, 6.24454, -3.96872, 0.807929, -3.96518, -6.29319, -0.266331, -1.17035, 2.82278, 1.89483)
 collision_layer = 8
 collision_mask = 9
 joint_type = 1
-joint_offset = Transform3D(1, 2.08167e-17, 5.58794e-09, 0, 1, -3.72529e-09, -5.58794e-09, 3.72529e-09, 1, -1.46894e-05, 0.00051231, 0.120535)
+joint_offset = Transform3D(1, 2.08167e-17, 5.58794e-09, 0, 1, -3.72529e-09, -5.58794e-09, 3.72529e-09, 1, -1.46894e-05, 0.000512309, 0.120535)
 joint_rotation = Vector3(3.72529e-09, 5.58794e-09, 0)
 body_offset = Transform3D(7.44297, -2.67569e-05, 5.46575e-05, 5.48363e-05, -5.97835e-05, -7.44297, 2.68202e-05, 7.44297, -5.96792e-05, 0.000102758, 0.89714, -0.00380591)
 bone_name = "Bone.002"
@@ -6119,10 +6119,10 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 
 script = ExtResource("2_cvnsp")
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(7.3612, -1.10023, -3.27838e-08, 1.10023, 7.3612, -2.45606e-09, 3.27867e-08, -2.41706e-09, 7.44297, -2.12343, 4.83476, -2.22586e-07)
+transform = Transform3D(7.3612, -1.10023, -3.2784e-08, 1.10023, 7.3612, -2.45611e-09, 3.27869e-08, -2.41705e-09, 7.44297, -2.12343, 4.83476, -2.22586e-07)
 collision_layer = 8
 collision_mask = 9
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0590976, -0.665623, 2.94633e-08)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0590976, -0.665623, 2.94632e-08)
 body_offset = Transform3D(7.44297, 0, -1.77454e-06, 0, 7.44297, -4.43636e-07, 1.77454e-06, 4.43636e-07, 7.44297, -0.439862, 4.95421, -2.8871e-08)
 bone_name = "Bone"
 

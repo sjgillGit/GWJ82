@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Snoring rune.glb-e05591b35aa144f9abb53e90fceb
 
 [params]
 
-nodes/root_type="InteractionTrap"
+nodes/root_type="RigidBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
