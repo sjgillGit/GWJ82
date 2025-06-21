@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dqlavm56kjnr3"]
+[gd_scene load_steps=10 format=4 uid="uid://bgy220dq8ki8c"]
 
 [ext_resource type="Texture2D" uid="uid://bynutlpig0xip" path="res://Assets/Art/House and Furniture/Ice Potion/Ice potion_vibrant_color_sheet_plus_skin_tones_and_more_now.png" id="1_riqvg"]
 
@@ -72,9 +72,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0ckbu")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kywlf"]
-points = PackedVector3Array(0.0446474, -0.00677575, 0.00953964, -0.0512578, 0.0126752, -0.00271605, -0.0513533, 0.0126389, 0.00221583, 0.0156608, 0.113015, 0.0123437, 0.0177899, 0.0200985, -0.0495279, -0.021661, 0.0175964, 0.0491316, -0.0170331, -0.0480584, -0.012824, -0.0229524, 0.110769, -0.00808843, -0.0289079, 0.0176731, -0.0469183, 0.0252489, 0.00524065, 0.0466768, 0.0188313, 0.110769, -0.0185331, -0.0119006, -0.0448641, 0.022175, 0.044847, 0.0102648, -0.0322277, 0.0466713, 0.0226989, 0.0264427, 0.012964, -0.0420834, -0.0250841, -0.0151113, 0.110769, 0.0206472, -0.0462901, 0.017615, 0.0318049, 0.0180377, -0.0475749, 0.0122437, 0.0250558, 0.0299587, 0.0463098, -0.0462041, 0.0176422, -0.0322508, -0.0151113, 0.110769, -0.0211519, 0.0514783, 0.0227089, -0.00267325, -0.0363744, -0.0291578, 0.00220646, 0.0214522, 0.110769, 0.0154197, -0.0213922, -0.0212537, -0.0368423, 0.0326589, -0.0268452, -0.0249347, -0.0216385, -0.0169261, 0.0392108, 0.020319, -0.0268883, 0.0343357, 0.00576986, 0.110769, 0.0232558, 0.0442454, 0.0226992, -0.0342262, 0.0249689, -0.0017799, -0.0442108, -0.0341249, -0.0245827, -0.02503)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2fbs"]
 resource_name = "Material.008"
 cull_mode = 2
@@ -116,6 +113,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wa4u8")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_riqvg"]
+size = Vector3(0.106171, 0.162109, 0.101196)
+
 [node name="ice_potion" type="RigidBody3D"]
 
 [node name="Cube_002" type="MeshInstance3D" parent="."]
@@ -123,11 +123,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00331311, 0.0433189, 0)
 mesh = SubResource("ArrayMesh_olglh")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00331311, 0.0433189, 0)
-shape = SubResource("ConvexPolygonShape3D_kywlf")
-
 [node name="Cylinder_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00439043, 0.0405876, 0)
 mesh = SubResource("ArrayMesh_1a3e3")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00332994, 0.0751073, 0.000305176)
+shape = SubResource("BoxShape3D_riqvg")

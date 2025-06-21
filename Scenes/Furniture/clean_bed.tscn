@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://di7wfqqpgn2c0" path="res://Assets/Art/House and Furniture/Bed (Clean)/clean Bed_covers clean.png" id="5_5rv3t"]
 [ext_resource type="Texture2D" uid="uid://bb2c58oafj3x2" path="res://Assets/Art/House and Furniture/Bed (Clean)/clean Bed_pillow clean.png" id="6_eltsq"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1rcn2"]
-points = PackedVector3Array(-0.0591516, -0.224052, -0.0789516, 0.879776, 0.2014, 0.0677559, 0.859121, 0.192041, -0.0714, 0.907452, -0.224052, -0.0789516, 0.890786, -0.2165, 0.0694762, -0.0314761, 0.2014, 0.0677559, -0.042486, -0.2165, 0.0694762, -0.0108215, 0.192041, -0.0714)
+[sub_resource type="BoxShape3D" id="BoxShape3D_naxyk"]
+size = Vector3(0.954224, 0.419922, 0.141785)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iks0o"]
-points = PackedVector3Array(-0.336253, 0.345538, -0.682658, 0.440229, 0.17489, 0.732952, 0.416051, -0.0198, 0.692233, -0.430152, 0.17489, 0.732952, -0.405975, -0.0198, -0.692233, 0.416051, -0.0198, -0.692233, 0.302719, 0.381033, -0.641262, -0.405975, -0.0198, 0.692233, 0.440229, 0.289343, -0.641262, -0.384316, 0.197773, 0.732952, -0.430152, 0.289343, -0.641262, -0.315476, 0.381033, -0.641262, 0.394392, 0.197773, 0.732952, 0.411511, 0.28179, -0.684585, -0.409123, 0.283812, -0.697535, 0.394392, 0.335148, -0.641262, -0.361398, 0.358111, -0.641262, 0.276417, 0.362819, -0.66819, 0.363521, 0.322441, -0.674837)
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8wci"]
+size = Vector3(0.834961, 0.228027, 1.245)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n4a8i"]
-points = PackedVector3Array(-0.0591516, -0.318652, -0.0789516, 0.890158, 0.2895, 0.0693781, 0.859121, 0.269617, -0.0714, 0.907452, -0.318652, -0.0789516, 0.895664, -0.3111, 0.0702383, -0.0418583, 0.2895, 0.0693781, -0.0473637, -0.3111, 0.0702383, -0.0108215, 0.269617, -0.0714)
+[sub_resource type="BoxShape3D" id="BoxShape3D_np2vf"]
+size = Vector3(0.953003, 0.602173, 0.142334)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybmh2"]
 resource_name = "Material.005"
@@ -245,16 +245,16 @@ shadow_mesh = SubResource("ArrayMesh_qs73f")
 script = ExtResource("2_48jfu")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.411655, 0.166671, 0.703869)
-shape = SubResource("ConvexPolygonShape3D_1rcn2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122301, 0.158981, 0.704144)
+shape = SubResource("BoxShape3D_naxyk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012531, 0.111997, 0.0215388)
-shape = SubResource("ConvexPolygonShape3D_iks0o")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00935717, 0.199643, 0.00914866)
+shape = SubResource("BoxShape3D_c8wci")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.411655, 0.262207, -0.657744)
-shape = SubResource("ConvexPolygonShape3D_n4a8i")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119572, 0.250671, -0.657744)
+shape = SubResource("BoxShape3D_np2vf")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012531, 0.111997, 0.0215388)

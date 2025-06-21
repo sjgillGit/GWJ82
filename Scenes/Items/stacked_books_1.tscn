@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bv4djt7twoot7"]
+[gd_scene load_steps=14 format=4 uid="uid://rb1g6i4vaokn"]
 
 [ext_resource type="Texture2D" uid="uid://c6oahwareivo3" path="res://Assets/Art/House and Furniture/Stacked Books 1/Stacked books 1_actual book 3.png" id="1_y3gry"]
 [ext_resource type="Texture2D" uid="uid://dwwstrvwiufm1" path="res://Assets/Art/House and Furniture/Stacked Books 1/Stacked books 1_actual pages.png" id="2_dxdmf"]
@@ -159,8 +159,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_teppo")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0j5l0"]
-points = PackedVector3Array(0.192412, 0.0667574, 0.0892529, 0.122247, 0.105575, 0.112843, -0.0822557, -0.0267222, 0.159368, 0.112859, -0.0238, -0.134142, 0.0338385, 0.146361, -0.180473, -0.166845, 0.149995, 0.00160001, -0.0391115, 0.1501, 0.157359, -0.113, -0.0179041, -0.133722, 0.166726, 0.1501, -0.0150598, 0.112859, -0.0238, 0.131673, -0.158227, 0.0200442, 0.0191379, -0.0647182, 0.0667574, 0.188622, -0.175764, 0.101854, 0.030781, -0.134032, 0.104073, -0.11639, 0.0229323, 0.101854, -0.185422, -0.181622, 0.101854, -0.0159013, 0.176945, 0.0183, 0.0712564, -0.113, -0.0179041, 0.131269, 0.0835267, 0.105711, -0.149107, 0.174874, 0.101854, -0.0159013, -0.104843, -0.0215832, -0.130675, -0.175223, 0.145704, -0.0153025, -0.0355014, 0.0667574, 0.182727, -0.117294, 0.0258789, -0.13863, 0.0443248, 0.1501, -0.165277, -0.0965895, 0.10411, 0.135811, -0.117294, 0.0258789, 0.135972, 0.164051, 0.14867, 0.00160001, -0.0277037, 0.149441, 0.156168, 0.0871874, 0.0551235, -0.156168, -0.0588968, -0.0267222, 0.159368, 0.192412, 0.0667574, 0.0775366)
+[sub_resource type="BoxShape3D" id="BoxShape3D_y3gry"]
+size = Vector3(0.335938, 0.170898, 0.329102)
 
 [node name="stacked_books_1" type="RigidBody3D"]
 
@@ -170,5 +170,5 @@ mesh = SubResource("ArrayMesh_f3env")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.371142, 0, 0.928576, 0, 1, 0, -0.928576, 0, 0.371142, 0.0191861, 0.0269059, -0.00642868)
-shape = SubResource("ConvexPolygonShape3D_0j5l0")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175781, 0.0908203, -0.00341797)
+shape = SubResource("BoxShape3D_y3gry")

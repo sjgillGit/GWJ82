@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b2cy3tmkgeywq"]
+[gd_scene load_steps=10 format=4 uid="uid://bi3xet638h6gd"]
 
 [ext_resource type="Texture2D" uid="uid://7b27n1mwol17" path="res://Assets/Art/House and Furniture/Fire Potion/Fire potion_vibrant_color_sheet_plus_skin_tones_and_more_now.png" id="1_ce5c6"]
 
@@ -71,8 +71,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dw5rv")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ce5c6"]
-points = PackedVector3Array(0.050421, 0.0149557, 0.000865397, -0.0496061, 0.00571196, -0.00143172, -0.0497142, 0.00561143, 0.000865946, -0.0172137, 0.127242, 0.0102662, 0.0154758, 0.0196588, -0.0479498, 0.00853663, -0.0155483, 0.040595, 0.021192, 0.123271, 0.01564, -0.0130962, 0.125712, -0.0211065, -0.0195666, -0.0205411, -0.0366561, -0.0217468, 0.019609, 0.0474545, 0.0260918, 0.103649, -0.0186574, 0.0344522, -0.0206555, -0.0249557, 0.0314808, 0.0176426, 0.0423551, -0.0307379, 0.0176309, -0.04292, -0.0314319, -0.0232048, 0.0221005, 0.0429315, 0.0177039, -0.0336406, 0.03404, -0.0197745, 0.0264192, -0.0449279, 0.0173573, 0.0287501, -0.00576196, 0.123271, 0.0229972, -0.044829, 0.0174334, -0.0292549, -0.0229061, 0.125712, -0.00394305, 0.0455858, 0.0197383, 0.0263855, 0.0138372, 0.123271, -0.0211065, 0.0224509, 0.0196482, 0.047397, -0.0356649, -0.0175365, -0.0270163, -0.020451, 0.125712, 0.01564, 0.0226405, -0.0111259, -0.0413324, -0.0491734, 0.0222415, 0.00778119, -0.0169684, 0.0221413, -0.0476872, -0.0219088, -0.0134743, 0.0407623, 0.0344606, -0.0230451, -0.00850371, 0.0138372, 0.125712, 0.0205383)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ce5c6"]
+size = Vector3(0.100586, 0.15625, 0.0966797)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_raskl"]
 resource_name = "Material.007"
@@ -123,8 +123,8 @@ mesh = SubResource("ArrayMesh_uobmi")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00114089, 0.027744, 0)
-shape = SubResource("ConvexPolygonShape3D_ce5c6")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00114089, 0.078037, 0)
+shape = SubResource("BoxShape3D_ce5c6")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00112608, 0.0405876, 0)

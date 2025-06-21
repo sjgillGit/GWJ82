@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://dhuiar1h20054"]
+[gd_scene load_steps=6 format=4 uid="uid://blrqfickk2twl"]
 
 [ext_resource type="Texture2D" uid="uid://oily7cfvc4o5" path="res://Assets/Art/House and Furniture/Wall/Wall_Log.png" id="1_rmxnp"]
 
@@ -41,8 +41,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cbck6")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eswn2"]
-points = PackedVector3Array(-0.0356355, 1.36712, 0.102642, -2.17234, -1.36795, -0.0681997, -2.17234, 1.36795, -0.0681997, -0.163586, 1.43279, -0.250387, -0.203882, -1.30883, 0.220828, -1.99493, 1.29673, 0.218748, -0.163586, -1.43279, -0.250387, -1.99493, -1.29673, 0.218748, -2.04374, 1.43279, -0.250387, -0.203882, 1.30883, 0.220828, -2.04374, -1.43279, -0.250387, -0.0356689, -1.36708, 0.102638, -2.17566, -1.3722, 0.0601908, -0.0389001, 1.36294, -0.110524, -2.17566, 1.3722, 0.0601908, -0.0389287, -1.36291, -0.110521, -2.08754, 1.31207, 0.18037, -0.110427, -1.32454, 0.182125, -2.08754, -1.31207, 0.18037, -0.110427, 1.32454, 0.182125)
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmxnp"]
+size = Vector3(2.19238, 2.81738, 0.481445)
 
 [node name="wall" type="RigidBody3D"]
 
@@ -52,5 +52,5 @@ mesh = SubResource("ArrayMesh_tse2s")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, -0.0135708, 0)
-shape = SubResource("ConvexPolygonShape3D_eswn2")
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1.08815, 0)
+shape = SubResource("BoxShape3D_rmxnp")

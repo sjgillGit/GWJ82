@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cm64yrmee0dwh"]
+[gd_scene load_steps=13 format=4 uid="uid://clhp7hiu2ny4i"]
 
 [ext_resource type="Texture2D" uid="uid://cpiv7t5w588wc" path="res://Assets/Art/House and Furniture/Book 6/Book 6_actual book 4.png" id="1_qem06"]
 [ext_resource type="Texture2D" uid="uid://wp2llsrf3auq" path="res://Assets/Art/House and Furniture/Book 6/Book 6_actual pages.png" id="2_wogxa"]
@@ -99,9 +99,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_457ys")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qem06"]
-points = PackedVector3Array(-0.110132, 0.0204919, -0.131603, 0.107998, 0.0238, 0.126921, 0.108059, -0.0238, 0.126993, -0.110132, 0.0204919, 0.131603, 0.108059, -0.0238, -0.126993, -0.0964258, -0.0233201, 0.12463, 0.107998, 0.0238, -0.126921, -0.109811, -0.0205581, -0.131222, -0.110832, 0.0299247, 0.0128717, 0.022379, 0.0299247, -0.137549, 0.022379, 0.0299247, 0.137549, 0.112648, 0.0299247, -0.0128717, -0.109811, -0.0205581, 0.131222, -0.0964258, -0.0233201, -0.12463, -0.00338627, 0.0299247, -0.137549, -0.00338627, 0.0299247, 0.137549, -0.110832, 0.0299247, -0.0128717, 0.112648, 0.0299247, 0.0128717, -0.0962235, 0.0233618, -0.124371, -0.0962235, 0.0233618, 0.124371)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dq83"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -141,6 +138,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3k7g8")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qem06"]
+size = Vector3(0.229492, 0.0488281, 0.271484)
+
 [node name="Book 6" type="RigidBody3D"]
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
@@ -148,11 +148,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00140712, 0.0269059, 0.0209
 mesh = SubResource("ArrayMesh_oxq46")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00140712, 0.0269059, 0.0209418)
-shape = SubResource("ConvexPolygonShape3D_qem06")
-
 [node name="Plane_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0678635, 0.028918, 0.143341)
 mesh = SubResource("ArrayMesh_qw528")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0271272, 0.0269059, -0.00364852)
+shape = SubResource("BoxShape3D_qem06")

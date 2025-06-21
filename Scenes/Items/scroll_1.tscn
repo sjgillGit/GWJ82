@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bo1rcbmpwlums"]
+[gd_scene load_steps=6 format=4 uid="uid://6jcg3rermpbw"]
 
 [ext_resource type="Texture2D" uid="uid://6kcdx5kn5pgg" path="res://Assets/Art/House and Furniture/Scroll 1/Scroll 1_vibrant_color_sheet_plus_skin_tones_and_more_now.png" id="1_4dls3"]
 
@@ -41,8 +41,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xc2g7")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0gyol"]
-points = PackedVector3Array(-0.0443905, 0.00755212, -0.10499, 0.0591143, 0.00356182, -0.0930445, 0.0392056, 0.039381, 0.14979, -0.00855489, -0.0282905, 0.14979, -0.0364169, 0.039381, 0.14979, 0.0113335, 0.0513286, -0.10499, -0.00855489, -0.0282905, -0.10499, 0.0551224, -0.00439541, 0.133854, -0.0324453, 0.0433635, -0.10499, -0.0324453, -0.0123604, 0.14979, -0.00458329, 0.0513286, 0.14979, 0.019297, -0.024308, -0.10499, 0.0392056, 0.039381, -0.10499, -0.0443905, 0.0194763, 0.14979, 0.019297, -0.024308, 0.14979, -0.0244818, -0.0203255, -0.10499, 0.0551224, 0.00754433, 0.14979, 0.0591143, -0.000412901, -0.101, -0.0403986, 0.0314238, -0.10499, 0.0232787, 0.0473461, 0.14979, -0.00855489, 0.0513286, -0.10499, 0.00736191, -0.0282905, 0.14979, -0.0324453, 0.0433635, 0.14979, -0.0443905, 0.011519, 0.14979, -0.0324453, -0.0123604, -0.10499, -0.0244818, -0.0203255, 0.14979, 0.00736191, -0.0282905, -0.10499, 0.0113335, 0.0513286, 0.14979, 0.0551224, -0.00439541, -0.0930445, -0.0443905, 0.0194763, -0.10499, 0.0551224, 0.011519, -0.10499, 0.0272604, -0.0203255, 0.14979)
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dls3"]
+size = Vector3(0.0927734, 0.0696411, 0.25061)
 
 [node name="scroll 1" type="RigidBody3D"]
 
@@ -51,4 +51,5 @@ mesh = SubResource("ArrayMesh_veb8b")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_0gyol")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585938, 0.0121765, 0.02292)
+shape = SubResource("BoxShape3D_4dls3")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bg57mmntd58ou"]
+[gd_scene load_steps=29 format=4 uid="uid://csno0wshyyllc"]
 
 [ext_resource type="Texture2D" uid="uid://baogsbl8fy7uc" path="res://Assets/Art/House and Furniture/Eyeball Jar/eye ball jar_lid.png" id="1_s8lml"]
 [ext_resource type="Texture2D" uid="uid://d0g54k3l87fu5" path="res://Assets/Art/House and Furniture/Eyeball Jar/eye ball jar_eye 4.png" id="2_ext2d"]
@@ -76,8 +76,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_s2sax")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wdmmd"]
-points = PackedVector3Array(0.00197211, 0.0658249, 0.0628402, -0.00793402, 0.0659861, -0.0620548, 0.0634607, 0.0659268, -0.00844082, 0.0511511, -0.0565571, 0.03096, -0.0593847, -0.0569246, 0.00739713, 0.0316356, -0.0568448, -0.0499319, -0.063598, 0.0660598, 0.00742383, -0.0215925, -0.0564328, 0.0544784, -0.0437807, -0.0572549, -0.0403266, -0.0453715, 0.0656083, 0.0448452, 0.0453715, 0.0656083, 0.0448452, -0.0553862, 0.0657766, -0.0321598, 0.0436375, 0.0659515, -0.0461392, 0.0570715, -0.0565731, -0.0182075, 0.0158049, -0.0568427, 0.0568172, -0.00790825, -0.0568878, -0.0578861, -0.0511486, -0.0565393, 0.0309633, -0.0334966, 0.0655454, -0.053707, 0.0197119, 0.0656041, -0.0596836, 0.0611552, 0.065609, 0.019211, 0.0593847, -0.0569246, 0.00739713, -0.0570715, -0.0565731, -0.0182075, -0.0158683, 0.065987, 0.0610096, -0.0559287, 0.0663772, 0.0314329, 0.0316529, 0.0657767, 0.0548613, 0.0334041, -0.0564782, 0.0486161, 0.0553862, 0.0657766, -0.0321598, 0.0489352, -0.05624, -0.033776, 0.00790825, -0.0568878, -0.0578861, -0.0634607, 0.0659268, -0.00844082, -0.0236226, -0.0565917, -0.053658, -0.0334041, -0.0564782, 0.0486161)
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8lml"]
+size = Vector3(0.128662, 0.127319, 0.125977)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7ys3"]
 resource_name = "Material.006"
@@ -349,8 +349,8 @@ mesh = SubResource("ArrayMesh_eohbh")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0163639, 0.0518896, -0.0116589)
-shape = SubResource("ConvexPolygonShape3D_wdmmd")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0163639, 0.0564672, -0.0116589)
+shape = SubResource("BoxShape3D_s8lml")
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.279437, 0.536505, 0.79629, -0.960095, 0.146205, 0.238414, 0.0114888, -0.831136, 0.555951, 0.0533681, 0.0111664, -0.0135323)

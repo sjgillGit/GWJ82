@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=4 uid="uid://q767w76od54l"]
+[gd_scene load_steps=123 format=4 uid="uid://c2012ershe107"]
 
 [ext_resource type="Texture2D" uid="uid://ckg7cadokplty" path="res://Assets/Art/House and Furniture/Book Shelf/Book shelf_bookshelf.png" id="1_ey60p"]
 [ext_resource type="Texture2D" uid="uid://d6uwrt0gy37q" path="res://Assets/Art/House and Furniture/Book Shelf/Book shelf_plank 1.png" id="2_c3sn5"]
@@ -46,8 +46,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ehrgj")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ksl4y"]
-points = PackedVector3Array(0.423504, 1.05748, 0.156788, -0.435076, -0.000207733, -0.1569, 0.440624, -0.000207733, -0.1569, -0.369842, -0.0233, 0.174727, -0.438585, 1.02568, -0.1582, -0.45162, 1.04065, 0.1568, 0.444134, 1.02568, -0.1582, 0.4526, -0.0144044, 0.155277, -0.45162, -0.0198204, 0.1568, 0.381395, 0.226329, 0.177417, 0.451014, 1.03358, 0.154748, -0.418872, 1.03791, -0.1569, -0.375756, 0.226329, 0.177417, -0.431653, 1.05364, 0.155709, 0.408217, 1.03791, -0.1569, 0.3651, -0.00820155, 0.170009)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ey60p"]
+size = Vector3(0.90332, 1.08838, 0.321289)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqptd"]
 resource_name = "Material.003"
@@ -2793,8 +2793,8 @@ mesh = SubResource("ArrayMesh_ip0d8")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00783303, 0.0315101, -0.00831492)
-shape = SubResource("ConvexPolygonShape3D_ksl4y")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00783303, 0.549943, -0.00831492)
+shape = SubResource("BoxShape3D_ey60p")
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00783303, 0.522543, -0.00831492)

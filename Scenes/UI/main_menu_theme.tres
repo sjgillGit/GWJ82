@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dkfp2kcatfr8h"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://tmetb50dovu1"]
 
 [ext_resource type="StyleBox" uid="uid://cgc2bdluoddw5" path="res://Scenes/UI/theme_resources/button_style_box_flat.tres" id="1_8c53l"]
 [ext_resource type="FontFile" uid="uid://b7h33fncgs36a" path="res://Assets/Fonts/Patrick_Hand/PatrickHand-Regular.ttf" id="2_u7k5u"]
