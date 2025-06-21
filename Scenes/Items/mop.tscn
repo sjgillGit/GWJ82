@@ -12,20 +12,22 @@ collision_layer = 4
 script = ExtResource("2_jdfcm")
 highlight_meshes = [NodePath("Armature/Skeleton3D/NurbsPath"), NodePath("Armature/Skeleton3D/Sphere_004")]
 
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(0.0700408, 0.0399547, 0.00433456, -0.0394128, 0.0699908, -0.00829461, -0.00786096, 0.00507881, 0.0802078, 0, 0, 0)
+
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(-1.87876, -2.98221, 0.175521)
-bones/0/rotation = Quaternion(-0.00958537, 0.000712341, 0.128122, 0.991712)
+bones/0/position = Vector3(0.0134288, -2.69539, 0.17199)
+bones/0/rotation = Quaternion(-0.00961179, -2.52338e-08, 0.054269, 0.99848)
 bones/1/rotation = Quaternion(0.00185563, 0.02323, -0.208396, 0.977767)
-bones/2/rotation = Quaternion(-0.245183, 0.386699, 0.511497, 0.727131)
-bones/3/rotation = Quaternion(0.0295152, -0.172694, -0.25968, 0.94967)
-bones/4/rotation = Quaternion(0.0468497, -0.00377256, -0.104169, 0.993448)
-bones/5/rotation = Quaternion(-0.00324768, 0.00624273, 0.0765542, 0.997041)
-bones/6/rotation = Quaternion(0.0670944, -0.0834464, -0.527821, 0.84258)
-bones/7/rotation = Quaternion(0.102717, -0.0659657, -0.289018, 0.949508)
+bones/2/rotation = Quaternion(-0.0753485, -0.0819873, 0.554387, 0.824776)
+bones/3/rotation = Quaternion(0.0314656, 0.00135977, -0.0443809, 0.998518)
+bones/4/rotation = Quaternion(0.0468496, -0.00377254, -0.104169, 0.993448)
+bones/5/rotation = Quaternion(-0.00324768, 0.00624273, 0.0765543, 0.997041)
+bones/6/rotation = Quaternion(0.0670943, -0.0834463, -0.527821, 0.84258)
+bones/7/rotation = Quaternion(-0.00459761, -0.0747841, -0.315109, 0.946093)
 bones/8/position = Vector3(0.0134289, -2.69539, 0.17199)
-bones/8/rotation = Quaternion(0.383296, 0.233464, 0.852289, -0.268666)
-bones/9/rotation = Quaternion(0.0996441, 0.0453355, 0.0154898, 0.993869)
+bones/8/rotation = Quaternion(0.438496, 0.165608, 0.860162, -0.201041)
+bones/9/rotation = Quaternion(-0.000530118, 0.00189073, -0.00258852, 0.999995)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.282649, 0.132408, 0.396279)
 shape = SubResource("CapsuleShape3D_jdfcm")
