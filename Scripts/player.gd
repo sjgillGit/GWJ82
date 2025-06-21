@@ -38,6 +38,8 @@ signal raycast_hit_changed(raycast_hit: Object)
 ## Ampluitude of run bob (m).
 @export var run_bob_amplitude: float = 0.08
 
+
+
 ## [Object] currently hit by the player's raycast, or null if no object is hit.
 var raycast_hit: Object = null
 
@@ -56,6 +58,9 @@ var _vertical_velocity := Vector3.ZERO
 @onready var _raycast: RayCast3D = $CameraOffset/Camera3D/RayCast3D
 @onready var _hotbar: Hotbar = %Hotbar
 
+#walks sounds for the player
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@export var walks: Array[AudioStreamWAV]
 
 
 #region Built-in Function Overrides
@@ -100,6 +105,8 @@ func _physics_process(delta: float) -> void:
 	# Update horizontal and vertical velocity and apply movement
 	self.velocity = _get_walk_velocity(delta) + _get_vertical_velocity(delta)
 	move_and_slide()
+	
+	
 	# Update raycast
 	_update_raycast_hit()
 #endregion

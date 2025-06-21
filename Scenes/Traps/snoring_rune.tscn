@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf46jjo5e4vug"]
+
+[ext_resource type="PackedScene" uid="uid://cwcf2wtthw1d6" path="res://Assets/Art/Runes/Snoring Runes/Snoring rune.glb" id="1_3uhlu"]
+
+[node name="STUPID ASS rune" instance=ExtResource("1_3uhlu")]
