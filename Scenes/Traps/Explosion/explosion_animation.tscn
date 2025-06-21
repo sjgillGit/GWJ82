@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://di1qa7dynoxkr"]
+
+[ext_resource type="PackedScene" uid="uid://c6wtpd4lmwtkp" path="res://Scenes/Traps/Explosion/fire_particles.tscn" id="1_5ccvo"]
+[ext_resource type="Script" uid="uid://btstfmi5p02uy" path="res://Scenes/Traps/Explosion/explosion_animation.gd" id="1_wq64g"]
+[ext_resource type="PackedScene" uid="uid://hhqls4pctv60" path="res://Scenes/Traps/Explosion/explosion_particles.tscn" id="2_wq64g"]
+
+[node name="ExplosionAnimation" type="Node3D"]
+script = ExtResource("1_wq64g")
+
+[node name="FireParticles" parent="." instance=ExtResource("1_5ccvo")]
+emitting = false
+
+[node name="ExplosionParticles" parent="." instance=ExtResource("2_wq64g")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
