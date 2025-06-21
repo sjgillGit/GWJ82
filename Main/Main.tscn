@@ -40,7 +40,7 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 
 [node name="Desk" parent="." instance=ExtResource("6_qg80j")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 17.7409, 0.0631535, -0.776173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7409, 0.0631535, -0.776173)
 lock_rotation = true
 
 [node name="Dirty Stool" parent="." instance=ExtResource("7_bor5n")]
