@@ -54,7 +54,7 @@ var _vertical_velocity := Vector3.ZERO
 
 @onready var _camera_offset: Node3D = $CameraOffset
 @onready var _raycast: RayCast3D = $CameraOffset/RayCast3D
-@onready var _hotbar: Hotbar = $CameraOffset/Hotbar
+@onready var _hotbar: Hotbar = $CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D/RightArm/Hotbar
 @onready var _player_model = $CameraOffset/PlayerModel
 
 
