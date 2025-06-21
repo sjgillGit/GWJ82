@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Ambush rune.glb-9c9c246f776b5a571b5a1ec1f8818
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="InteractionTrap"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

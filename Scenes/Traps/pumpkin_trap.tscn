@@ -7,10 +7,10 @@
 radius = 0.536616
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y2tah"]
-size = Vector3(3, 1, 0.75)
+size = Vector3(3, 1, 2.02661)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d876r"]
-size = Vector3(1, 1.5791, 1.27454)
+size = Vector3(1.31104, 1.5791, 1.27454)
 
 [node name="Pumpkin" node_paths=PackedStringArray("trigger_area", "kill_area", "highlight_meshes") instance=ExtResource("1_3ydib")]
 script = ExtResource("2_y2tah")
@@ -47,12 +47,12 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="MotionDetection" type="CollisionShape3D" parent="DetectArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.367, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.367, 0.281128)
 shape = SubResource("BoxShape3D_y2tah")
 debug_color = Color(0.993041, 0, 0.243444, 0.42)
 
 [node name="KillArea" type="Area3D" parent="." index="4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967119, 1.12352)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155518, 0.967119, 1.12352)
 shape = SubResource("BoxShape3D_d876r")

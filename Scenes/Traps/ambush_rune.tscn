@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu5qmao1ohb3c"]
+
+[ext_resource type="PackedScene" uid="uid://00tyrx54j4xo" path="res://Assets/Art/Runes/Ambush Runes/Ambush rune.glb" id="1_vx0p3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yoi6y"]
+size = Vector3(1, 1, 1.45752)
+
+[node name="Ambush rune" node_paths=PackedStringArray("kill_area") instance=ExtResource("1_vx0p3")]
+kill_area = NodePath("Kill Area")
+
+[node name="Kill Area" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26002, 0.506145, 0.215838)
+shape = SubResource("BoxShape3D_yoi6y")
+debug_color = Color(0.715694, 0, 0.219722, 0.42)

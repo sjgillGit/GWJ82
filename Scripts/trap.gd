@@ -55,6 +55,7 @@ func _attempt_to_kill():
 	for body in bodies:
 		if body is Player:
 			print("Player killed") # ADD PLAYER DEATH HERE
+			#ADD PLAYER DEATH
 
 func _play_trigger_animation():
 	if anim_player and trigger_animation_name: 

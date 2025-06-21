@@ -1,3 +1,61 @@
-[gd_scene format=3 uid="uid://63x118b4yxow"]
+[gd_scene load_steps=12 format=3 uid="uid://63x118b4yxow"]
+
+[ext_resource type="PackedScene" uid="uid://ctgo2tyv07hj7" path="res://Main/og_layout.tscn" id="1_83ytx"]
+[ext_resource type="PackedScene" uid="uid://cjtsppxp5qe3l" path="res://Scenes/player.tscn" id="2_amygn"]
+[ext_resource type="Environment" uid="uid://cvn1mieax5pe7" path="res://Main/3d_test.tres" id="3_amygn"]
+[ext_resource type="PackedScene" uid="uid://um14l2k3rwvw" path="res://Scenes/Traps/pumpkin_trap.tscn" id="4_ps1la"]
+[ext_resource type="PackedScene" uid="uid://bnu6weubjshll" path="res://Scenes/Traps/carnivorous_plant_trap.tscn" id="5_6aewd"]
+[ext_resource type="PackedScene" uid="uid://dwpjsoklfc67e" path="res://Scenes/Furniture/dirty_desk.tscn" id="6_qg80j"]
+[ext_resource type="PackedScene" uid="uid://ckr5iho4nvfa0" path="res://Scenes/Furniture/dirty_stool.tscn" id="7_bor5n"]
+[ext_resource type="PackedScene" uid="uid://ffchjstoyy31" path="res://Scenes/Furniture/dirty_bed.tscn" id="8_wltqy"]
+[ext_resource type="PackedScene" uid="uid://jegqb5oeklcc" path="res://Scenes/Furniture/dirty_door.tscn" id="9_bor5n"]
+[ext_resource type="PackedScene" uid="uid://bu5qmao1ohb3c" path="res://Scenes/Traps/ambush_rune.tscn" id="10_wltqy"]
+[ext_resource type="PackedScene" uid="uid://cf46jjo5e4vug" path="res://Scenes/Traps/snoring_rune.tscn" id="11_kf8jr"]
 
 [node name="Main" type="Node3D"]
+
+[node name="OGLayoutForRealThisTime" parent="." instance=ExtResource("1_83ytx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0677147, -0.0689163, 0.0269165)
+
+[node name="Player" parent="." instance=ExtResource("2_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5212, 9.06026, 97.1924)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_amygn")
+
+[node name="Pumpkin" parent="." instance=ExtResource("4_ps1la")]
+transform = Transform3D(0.417566, 0, 0.908647, 0, 1, 0, -0.908647, 0, 0.417566, -17.3026, 1.80029, 68.4866)
+lock_rotation = true
+
+[node name="Carnivorous plant" parent="." instance=ExtResource("5_6aewd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8905, 1.28769, -0.476736)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="Desk" parent="." instance=ExtResource("6_qg80j")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 17.7409, 0.0631535, -0.776173)
+lock_rotation = true
+
+[node name="Dirty Stool" parent="." instance=ExtResource("7_bor5n")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.6223, 0.0624218, 0.554798)
+lock_rotation = true
+
+[node name="dirty Bed" parent="." instance=ExtResource("8_wltqy")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 19.3529, 0.258401, 16.2622)
+lock_rotation = true
+
+[node name="Dirty door" parent="." instance=ExtResource("9_bor5n")]
+transform = Transform3D(4.90892, 0, -0.950018, 0, 5, 0, 0.950018, 0, 4.90892, -34.3773, 1.51204, 71.0043)
+
+[node name="Ambush rune" parent="." instance=ExtResource("10_wltqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6682, 2.00576, 23.775)
+
+[node name="snoring rune" parent="." instance=ExtResource("11_kf8jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 2, 25)
