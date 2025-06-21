@@ -55,6 +55,7 @@ var _vertical_velocity := Vector3.ZERO
 @onready var _camera: Camera3D = $CameraOffset/Camera3D
 @onready var _raycast: RayCast3D = $CameraOffset/Camera3D/RayCast3D
 @onready var _hotbar: Hotbar = $CameraOffset/Camera3D/Hotbar
+@onready var _player_model = $CameraOffset/Camera3D/PlayerModel
 
 
 
@@ -195,6 +196,18 @@ func _update_camera_rotation() -> void:
 # Returns true if the player is moving horizontally (may be in the air or on the ground).
 func _is_moving_horizontally() -> bool:
 	return _walk_velocity.length() > 0
+#endregion
+
+
+#region Animation
+## Animates player death using ragdoll animation. Also disables player input.
+## The player is invalid after calling this function and a new one must be
+## instantiated to respawn the player. [param impulse] is an impulse to apply to
+## the player's torso when starting the animation.
+func die(impulse: Vector3) -> void:
+	_player_model.ragdoll_animation(impulse)
+	set_process_unhandled_input(false)
+	set_physics_process(false)
 #endregion
 
 

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://duaj80156bewb" path="res://Scripts/player.gd" id="1_3l5as"]
 [ext_resource type="Script" uid="uid://cpprqqge6rekj" path="res://Scripts/hotbar.gd" id="2_cvnsp"]
 [ext_resource type="Theme" uid="uid://ypuodoia5d3q" path="res://Scenes/UI/ui_theme.tres" id="2_vgqql"]
-[ext_resource type="PackedScene" uid="uid://ct0pdqsmbw3xm" path="res://Assets/Art/Player/Player model.glb" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://da00h62n0ginr" path="res://Scenes/UI/shader_overlay.gd" id="3_gymyn"]
 [ext_resource type="Script" uid="uid://dgwkt51ixucg7" path="res://Scenes/UI/interact_label.gd" id="3_vgqql"]
 [ext_resource type="Script" uid="uid://dsyda8ureutpn" path="res://Scenes/UI/luck_container.gd" id="4_x3wgy"]
@@ -11,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dqrlqnqwh5xeu" path="res://Scenes/UI/hotbar_container.gd" id="6_3smsa"]
 [ext_resource type="Shader" uid="uid://onvchygpcv55" path="res://Scripts/Shaders/toon.gdshader" id="7_8erm5"]
 [ext_resource type="PackedScene" uid="uid://ghku3nt2r3mc" path="res://Scenes/UI/options_panel.tscn" id="9_pu2lt"]
+[ext_resource type="PackedScene" uid="uid://bkp6fbclrx7pw" path="res://Scenes/player_model.tscn" id="10_gymyn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sht0"]
 radius = 0.4
@@ -34,13 +34,19 @@ shape = SubResource("CapsuleShape3D_1sht0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraOffset"]
-current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraOffset/Camera3D"]
 target_position = Vector3(0, 0, -3)
 collision_mask = 5
 
-[node name="Control" type="Control" parent="CameraOffset/Camera3D"]
+[node name="PlayerModel" parent="CameraOffset/Camera3D" instance=ExtResource("10_gymyn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.8, -0.2)
+
+[node name="Hotbar" type="Node3D" parent="CameraOffset/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+script = ExtResource("2_cvnsp")
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ShaderOverlay" type="ColorRect" parent="CameraOffset/Camera3D/Control"]
+[node name="ShaderOverlay" type="ColorRect" parent="Control"]
 material = SubResource("ShaderMaterial_f1ek2")
 layout_mode = 1
 anchors_preset = 15
@@ -59,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_gymyn")
 
-[node name="InteractionMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
+[node name="InteractionMarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,16 +80,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 128
 
-[node name="InteractionLabel" type="Label" parent="CameraOffset/Camera3D/Control/InteractionMarginContainer" node_paths=PackedStringArray("player")]
+[node name="InteractionLabel" type="Label" parent="Control/InteractionMarginContainer" node_paths=PackedStringArray("player")]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_vgqql")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_vgqql")
-player = NodePath("../../../../..")
+player = NodePath("../../..")
 
-[node name="LuckMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
+[node name="LuckMarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -96,13 +102,13 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="LuckContainer" type="HBoxContainer" parent="CameraOffset/Camera3D/Control/LuckMarginContainer"]
+[node name="LuckContainer" type="HBoxContainer" parent="Control/LuckMarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 script = ExtResource("4_x3wgy")
 luck_texture = ExtResource("5_3smsa")
 
-[node name="HotbarMarginContainer" type="MarginContainer" parent="CameraOffset/Camera3D/Control"]
+[node name="HotbarMarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -116,13 +122,13 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 32
 
-[node name="HotbarContainer" type="HBoxContainer" parent="CameraOffset/Camera3D/Control/HotbarMarginContainer" node_paths=PackedStringArray("hotbar")]
+[node name="HotbarContainer" type="HBoxContainer" parent="Control/HotbarMarginContainer" node_paths=PackedStringArray("hotbar")]
 layout_mode = 2
 theme_override_constants/separation = 16
 script = ExtResource("6_3smsa")
-hotbar = NodePath("../../../Hotbar")
+hotbar = NodePath("../../../CameraOffset/Camera3D/Hotbar")
 
-[node name="OptionsPanel" parent="CameraOffset/Camera3D/Control" instance=ExtResource("9_pu2lt")]
+[node name="OptionsPanel" parent="Control" instance=ExtResource("9_pu2lt")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -134,10 +140,3 @@ offset_left = -250.0
 offset_top = -400.0
 offset_right = 250.0
 offset_bottom = 400.0
-
-[node name="Player model" parent="CameraOffset/Camera3D" instance=ExtResource("3_6t5aa")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.8, 0)
-
-[node name="Hotbar" type="Node3D" parent="CameraOffset/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
-script = ExtResource("2_cvnsp")
