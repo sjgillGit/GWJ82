@@ -6,7 +6,13 @@ var luck = 0 # CHANGE BACK !!!
 
 var traps_disarmed = 0
 var total_items = 0
-var cleaned_items = 0
+var cleaned_items = 0:
+	set(value):
+		cleaned_items = value
+		if value >= total_items:
+			all_cleaned.emit()
+
+signal all_cleaned
 
 signal luck_changed
 

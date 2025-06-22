@@ -1,6 +1,13 @@
 extends Node3D
 
 
+func _ready() -> void:
+	StatTracker.all_cleaned.connect(win)
+
+func win():
+	%Title.text = "Level Complete!"
+	_on_player_died()
+
 func _on_player_died() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$DeadMenu.visible = true
