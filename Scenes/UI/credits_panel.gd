@@ -9,6 +9,7 @@ var credits = {
 		},
 		{
 			"username": "mike3D",
+			"links": ["https://mike3d.itch.io/"]
 		},
 		{
 			"username": "XZO",
@@ -30,7 +31,8 @@ var credits = {
 			"username": "asvo777",
 		},
 		{
-			"username": "Cyrus",
+			"username": "cydlee / Cyrus Lee",
+			"links": ["https://cydlee.itch.io"]
 		}
 	],
 	"Sound": [
