@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b7agr4qv0d2wk"]
+[gd_scene load_steps=30 format=4 uid="uid://b7agr4qv0d2wk"]
 
 [ext_resource type="Script" uid="uid://c1od07lgtqgy0" path="res://Scenes/Test/3d_test.gd" id="1_k7t3r"]
 [ext_resource type="PackedScene" uid="uid://cjtsppxp5qe3l" path="res://Scenes/player.tscn" id="1_xvgka"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bcgujiet8cs3c" path="res://Scenes/Furniture/clean_floor_3.tscn" id="11_j56up"]
 [ext_resource type="PackedScene" uid="uid://bwgxfps3es1cs" path="res://Scenes/Items/mop.tscn" id="12_j56up"]
 [ext_resource type="Texture2D" uid="uid://brma34a4bj7jk" path="res://Assets/Art/Backyard/Grass/Grass type 1_vibrant_color_sheet_plus_skin_tones_and_more_now.png" id="12_w7c46"]
+[ext_resource type="PackedScene" uid="uid://bu5qmao1ohb3c" path="res://Scenes/Traps/ambush_rune.tscn" id="14_almck"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2mhh"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -193,5 +194,9 @@ skeleton = NodePath("")
 
 [node name="Mop" parent="." instance=ExtResource("12_j56up")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -5)
+
+[node name="Ambush rune" parent="." instance=ExtResource("14_almck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.943, 0, 0)
+death_force = Vector3(0, 20, 0)
 
 [editable path="Floor 3"]

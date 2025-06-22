@@ -2,7 +2,7 @@ extends Node
 
 # VARIABLES -------
 var score = 0
-var luck = 0 # CHANGE BACK !!!
+var luck = 4
 
 var traps_disarmed = 0
 var total_items = 0

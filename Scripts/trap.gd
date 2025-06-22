@@ -1,5 +1,8 @@
 class_name Trap extends Interactible
 
+signal triggered()
+
+
 # VARIABLES -------
 # Set the area in which a player will die
 @export var kill_area : Area3D
@@ -10,6 +13,7 @@ class_name Trap extends Interactible
 # Set the name of the item root node required to disarm (can be null for any item to disarm)
 @export var disarm_item : String = "Wand"
 
+@export var warning_sound: AudioStreamPlayer3D
 @export var attack_sound: AudioStreamPlayer3D
 
 ## Force to exert on player when dead from this trap.
@@ -52,7 +56,14 @@ func pre_trigger():
 		print("Trap pre-triggered")
 		isPreTriggered = true
 		StatTracker.decrement_luck()
+		if warning_sound:
+			warning_sound.play()
 		await _play_trigger_animation(pre_trigger_animation)
+		if warning_sound:
+			warning_sound.stop()
+		if attack_sound:
+			attack_sound.play()
+		triggered.emit()
 		_attempt_to_kill()
 	disarm()
 
@@ -62,8 +73,11 @@ func trigger():
 		return
 	else:
 		print("Trap triggered")
-		await _play_trigger_animation(trigger_animation)
+		if attack_sound:
+			attack_sound.play()
+		triggered.emit()
 		_attempt_to_kill()
+		await _play_trigger_animation(trigger_animation)
 	disarm()
 
 func _attempt_to_kill():
@@ -80,7 +94,7 @@ func _attempt_to_kill():
 			body.die(death_force)
 
 func _play_trigger_animation(animation_name: String):
-	if anim_player and animation_name: 
+	if anim_player and animation_name:
 		anim_player.play(animation_name)
 		if attack_sound:
 			attack_sound.play()

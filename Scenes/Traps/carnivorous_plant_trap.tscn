@@ -13,12 +13,14 @@ radius = 0.0712891
 height = 2.51147
 radius = 0.827148
 
-[node name="Carnivorous plant" node_paths=PackedStringArray("trigger_area", "kill_area", "highlight_meshes") instance=ExtResource("1_vkc08")]
+[node name="Carnivorous plant" node_paths=PackedStringArray("trigger_area", "kill_area", "warning_sound", "attack_sound", "highlight_meshes") instance=ExtResource("1_vkc08")]
 script = ExtResource("2_32on6")
 trigger_area = NodePath("Area3D")
 kill_area = NodePath("Area3D")
 pre_trigger_animation = "long_attack"
 trigger_animation = "attack_short"
+warning_sound = NodePath("GROWL")
+attack_sound = NodePath("ATTACK")
 highlight_meshes = [NodePath("Armature/Skeleton3D/Sphere_002"), NodePath("Armature/Skeleton3D/Sphere"), NodePath("Armature/Skeleton3D/NurbsPath"), NodePath("Armature/Skeleton3D/Cylinder_001"), NodePath("Armature/Skeleton3D/Cylinder"), NodePath("Armature/Skeleton3D/Cube_002"), NodePath("Armature/Skeleton3D/Cube_001"), NodePath("Armature/Skeleton3D/Cube")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]

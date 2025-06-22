@@ -1,18 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu5qmao1ohb3c"]
+[gd_scene load_steps=6 format=3 uid="uid://bu5qmao1ohb3c"]
 
 [ext_resource type="PackedScene" uid="uid://00tyrx54j4xo" path="res://Assets/Art/Runes/Ambush Runes/Ambush rune.glb" id="1_vx0p3"]
-[ext_resource type="Script" uid="uid://cyoppg8flsjtu" path="res://Scripts/interaction_trap.gd" id="2_yoi6y"]
+[ext_resource type="Script" uid="uid://bjhwnoyw4n12s" path="res://Scripts/area_trap.gd" id="2_4wapj"]
 [ext_resource type="AudioStream" uid="uid://b3s4x1qcev0ll" path="res://Assets/Sound/Ambush Rune/Vent Bar GWJ 82 - AmbushRune (norm+comp).wav" id="3_4wapj"]
+[ext_resource type="PackedScene" uid="uid://di1qa7dynoxkr" path="res://Scenes/Traps/Explosion/explosion_animation.tscn" id="4_ejdjm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yoi6y"]
 size = Vector3(1, 1, 1.45752)
 
-[node name="Ambush rune" node_paths=PackedStringArray("kill_area") instance=ExtResource("1_vx0p3")]
+[node name="Ambush rune" node_paths=PackedStringArray("trigger_area", "kill_area", "attack_sound") instance=ExtResource("1_vx0p3")]
 freeze = true
-script = ExtResource("2_yoi6y")
+script = ExtResource("2_4wapj")
+trigger_area = NodePath("Kill Area")
 kill_area = NodePath("Kill Area")
+attack_sound = NodePath("AudioStreamPlayer3D")
+death_force = Vector3(0, 10, 0)
 
 [node name="Kill Area" type="Area3D" parent="." index="1"]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Area" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26002, 0.506145, 0.215838)
@@ -21,3 +27,8 @@ debug_color = Color(0.715694, 0, 0.219722, 0.42)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
 stream = ExtResource("3_4wapj")
+
+[node name="ExplosionAnimation" parent="." index="3" instance=ExtResource("4_ejdjm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.572856, 0)
+
+[connection signal="triggered" from="." to="ExplosionAnimation" method="explode"]

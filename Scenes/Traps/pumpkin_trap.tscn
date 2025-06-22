@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://um14l2k3rwvw"]
+[gd_scene load_steps=8 format=3 uid="uid://um14l2k3rwvw"]
 
 [ext_resource type="PackedScene" uid="uid://c3klm2244mxqo" path="res://Assets/Art/Traps/Pumpkin/Pumpkin.glb" id="1_3ydib"]
 [ext_resource type="Script" uid="uid://bjhwnoyw4n12s" path="res://Scripts/area_trap.gd" id="2_y2tah"]
+[ext_resource type="AudioStream" uid="uid://btcjbnpdva6ej" path="res://Assets/Sound/BIG CHOMPERS/Vent Bar GWJ 82 - Big Chomp.wav" id="3_uvibj"]
+[ext_resource type="AudioStream" uid="uid://by6cf6ua6hj2a" path="res://Assets/Sound/BIG CHOMPERS/Vent Bar GWJ 82 - Big  Breathing.wav" id="4_yt8ja"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3ydib"]
 radius = 0.536616
@@ -12,13 +14,14 @@ size = Vector3(3, 1, 2.02661)
 [sub_resource type="BoxShape3D" id="BoxShape3D_d876r"]
 size = Vector3(1.31104, 1.5791, 1.27454)
 
-[node name="Pumpkin" node_paths=PackedStringArray("trigger_area", "kill_area", "attack_sound", "highlight_meshes") instance=ExtResource("1_3ydib")]
+[node name="Pumpkin" node_paths=PackedStringArray("trigger_area", "kill_area", "warning_sound", "attack_sound", "highlight_meshes") instance=ExtResource("1_3ydib")]
 script = ExtResource("2_y2tah")
 trigger_area = NodePath("DetectArea")
 kill_area = NodePath("KillArea")
 pre_trigger_animation = "Attack_long"
 trigger_animation = "Attack_short"
-attack_sound = NodePath("AudioStreamPlayer3D")
+warning_sound = NodePath("GROWL")
+attack_sound = NodePath("ATTACK")
 highlight_meshes = [NodePath("Armature/Skeleton3D/Sphere_005"), NodePath("Armature/Skeleton3D/Plane_003")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
@@ -61,4 +64,8 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155518, 0.967119, 1.12352)
 shape = SubResource("BoxShape3D_d876r")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
+[node name="ATTACK" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource("3_uvibj")
+
+[node name="GROWL" type="AudioStreamPlayer3D" parent="." index="6"]
+stream = ExtResource("4_yt8ja")
