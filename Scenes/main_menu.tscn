@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://jkacyy17oc4u"]
 
 [ext_resource type="Texture2D" uid="uid://d2jpi7vnw5651" path="res://Assets/MainMenu/mainmenu_bg.jpg" id="1_ce3w2"]
-[ext_resource type="Theme" uid="uid://dkfp2kcatfr8h" path="res://Scenes/UI/main_menu_theme.tres" id="1_n45e2"]
+[ext_resource type="Theme" uid="uid://tmetb50dovu1" path="res://Scenes/UI/main_menu_theme.tres" id="1_n45e2"]
 [ext_resource type="Script" uid="uid://lk61dhumwd4o" path="res://Scenes/UI/menu_options.gd" id="2_n45e2"]
 [ext_resource type="Shader" uid="uid://doidgqui6208f" path="res://Scripts/Shaders/main_menu.gdshader" id="3_cp0ys"]
-[ext_resource type="PackedScene" uid="uid://b7agr4qv0d2wk" path="res://Scenes/Test/3d_test.tscn" id="3_opfnp"]
 [ext_resource type="PackedScene" uid="uid://ghku3nt2r3mc" path="res://Scenes/UI/options_panel.tscn" id="4_cp0ys"]
+[ext_resource type="PackedScene" uid="uid://63x118b4yxow" path="res://Main/Main.tscn" id="5_cp0ys"]
 [ext_resource type="Script" uid="uid://dshsiltkmrt63" path="res://Scenes/UI/credits_panel.gd" id="6_cp0ys"]
 
 [sub_resource type="Gradient" id="Gradient_yhxw7"]
@@ -81,7 +81,7 @@ grow_vertical = 2
 theme_override_constants/separation = 32
 script = ExtResource("2_n45e2")
 game_title = "TESTING"
-play_scene = ExtResource("3_opfnp")
+play_scene = ExtResource("5_cp0ys")
 
 [node name="GameTitle" type="Label" parent="MenuOptions"]
 unique_name_in_owner = true
