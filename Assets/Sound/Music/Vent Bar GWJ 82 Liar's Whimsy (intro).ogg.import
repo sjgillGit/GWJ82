@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgs4mh6rsd2wp"
+path="res://.godot/imported/Vent Bar GWJ 82 Liar's Whimsy (intro).ogg-6420b93b5c6f788f0714f92727122818.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Vent Bar GWJ 82 Liar's Whimsy (intro).ogg"
+dest_files=["res://.godot/imported/Vent Bar GWJ 82 Liar's Whimsy (intro).ogg-6420b93b5c6f788f0714f92727122818.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

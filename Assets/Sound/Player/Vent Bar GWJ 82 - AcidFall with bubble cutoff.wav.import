@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blf5xcks67o5v"
+path="res://.godot/imported/Vent Bar GWJ 82 - AcidFall with bubble cutoff.wav-93e960d64874a37108086774b9af3dde.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Player/Vent Bar GWJ 82 - AcidFall with bubble cutoff.wav"
+dest_files=["res://.godot/imported/Vent Bar GWJ 82 - AcidFall with bubble cutoff.wav-93e960d64874a37108086774b9af3dde.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

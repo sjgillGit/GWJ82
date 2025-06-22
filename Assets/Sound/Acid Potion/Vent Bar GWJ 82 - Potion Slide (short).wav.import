@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://mair5r12qed6"
+path="res://.godot/imported/Vent Bar GWJ 82 - Potion Slide (short).wav-1c5cf313648bb98a9c1ba5bda17aef29.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Acid Potion/Vent Bar GWJ 82 - Potion Slide (short).wav"
+dest_files=["res://.godot/imported/Vent Bar GWJ 82 - Potion Slide (short).wav-1c5cf313648bb98a9c1ba5bda17aef29.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
