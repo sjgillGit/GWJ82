@@ -16,7 +16,8 @@ size = Vector3(1.31104, 1.5791, 1.27454)
 script = ExtResource("2_y2tah")
 trigger_area = NodePath("DetectArea")
 kill_area = NodePath("KillArea")
-trigger_animation_name = "Attack_long"
+pre_trigger_animation = "Attack_long"
+trigger_animation = "Attack_short"
 highlight_meshes = [NodePath("Armature/Skeleton3D/Sphere_005"), NodePath("Armature/Skeleton3D/Plane_003")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
@@ -52,6 +53,8 @@ shape = SubResource("BoxShape3D_y2tah")
 debug_color = Color(0.993041, 0, 0.243444, 0.42)
 
 [node name="KillArea" type="Area3D" parent="." index="4"]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155518, 0.967119, 1.12352)

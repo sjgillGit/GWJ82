@@ -2,7 +2,7 @@ extends Node
 
 # VARIABLES -------
 var score = 0
-var luck = 4
+var luck = 0 # CHANGE BACK !!!
 
 signal luck_changed
 

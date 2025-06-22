@@ -15,7 +15,8 @@ radius = 0.827148
 script = ExtResource("2_32on6")
 trigger_area = NodePath("Area3D")
 kill_area = NodePath("Area3D")
-trigger_animation_name = "long_attack"
+pre_trigger_animation = "long_attack"
+trigger_animation = "attack_short"
 highlight_meshes = [NodePath("Armature/Skeleton3D/Sphere_002"), NodePath("Armature/Skeleton3D/Sphere"), NodePath("Armature/Skeleton3D/NurbsPath"), NodePath("Armature/Skeleton3D/Cylinder_001"), NodePath("Armature/Skeleton3D/Cylinder"), NodePath("Armature/Skeleton3D/Cube_002"), NodePath("Armature/Skeleton3D/Cube_001"), NodePath("Armature/Skeleton3D/Cube")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]

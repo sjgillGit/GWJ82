@@ -48,6 +48,9 @@ axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+pre_trigger_animation = ""
+trigger_animation = ""
+disarm_item = "Wand"
 
 [node name="Desk" parent="." instance=ExtResource("6_qg80j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7409, 0.0631535, -0.776173)
