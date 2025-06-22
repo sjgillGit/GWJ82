@@ -80,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 32
 script = ExtResource("2_n45e2")
-game_title = "TESTING"
+game_title = "Mage Ya Look"
 play_scene = ExtResource("5_cp0ys")
 
 [node name="GameTitle" type="Label" parent="MenuOptions"]
