@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnu6weubjshll"]
+[gd_scene load_steps=7 format=3 uid="uid://bnu6weubjshll"]
 
 [ext_resource type="PackedScene" uid="uid://bab4yle4cs3ed" path="res://Assets/Art/Traps/Carnivorus Plant/Carnivorous plant.glb" id="1_vkc08"]
 [ext_resource type="Script" uid="uid://bjhwnoyw4n12s" path="res://Scripts/area_trap.gd" id="2_32on6"]
+[ext_resource type="AudioStream" uid="uid://by6cf6ua6hj2a" path="res://Assets/Sound/BIG CHOMPERS/Vent Bar GWJ 82 - Big  Breathing.wav" id="3_3ey2t"]
+[ext_resource type="AudioStream" uid="uid://btcjbnpdva6ej" path="res://Assets/Sound/BIG CHOMPERS/Vent Bar GWJ 82 - Big Chomp.wav" id="4_hatdd"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vkc08"]
 height = 0.219788
@@ -55,3 +57,9 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23834, 1.08829)
 shape = SubResource("CylinderShape3D_32on6")
+
+[node name="GROWL" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("3_3ey2t")
+
+[node name="ATTACK" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource("4_hatdd")

@@ -12,12 +12,13 @@ size = Vector3(3, 1, 2.02661)
 [sub_resource type="BoxShape3D" id="BoxShape3D_d876r"]
 size = Vector3(1.31104, 1.5791, 1.27454)
 
-[node name="Pumpkin" node_paths=PackedStringArray("trigger_area", "kill_area", "highlight_meshes") instance=ExtResource("1_3ydib")]
+[node name="Pumpkin" node_paths=PackedStringArray("trigger_area", "kill_area", "attack_sound", "highlight_meshes") instance=ExtResource("1_3ydib")]
 script = ExtResource("2_y2tah")
 trigger_area = NodePath("DetectArea")
 kill_area = NodePath("KillArea")
 pre_trigger_animation = "Attack_long"
 trigger_animation = "Attack_short"
+attack_sound = NodePath("AudioStreamPlayer3D")
 highlight_meshes = [NodePath("Armature/Skeleton3D/Sphere_005"), NodePath("Armature/Skeleton3D/Plane_003")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
@@ -59,3 +60,5 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155518, 0.967119, 1.12352)
 shape = SubResource("BoxShape3D_d876r")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]

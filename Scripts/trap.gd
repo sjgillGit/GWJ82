@@ -10,6 +10,8 @@ class_name Trap extends Interactible
 # Set the name of the item root node required to disarm (can be null for any item to disarm)
 @export var disarm_item : String = "Wand"
 
+@export var attack_sound: AudioStreamPlayer3D
+
 ## Force to exert on player when dead from this trap.
 @export var death_force := Vector3.ZERO
 
@@ -80,6 +82,8 @@ func _attempt_to_kill():
 func _play_trigger_animation(animation_name: String):
 	if anim_player and animation_name: 
 		anim_player.play(animation_name)
+		if attack_sound:
+			attack_sound.play()
 		await anim_player.animation_finished
 		_reverse_trigger_animation(animation_name)
 
