@@ -175,37 +175,41 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_amkgh")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_3taxk"]
-height = 0.274414
-radius = 0.200195
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_iu4ud"]
+height = 0.580078
+radius = 0.402832
 
 [node name="Clean stool" type="RigidBody3D"]
+freeze = true
 
-[node name="Cylinder" type="MeshInstance3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Cylinder" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0167236, 0.259821, 0.0130559)
 mesh = SubResource("ArrayMesh_w260x")
 skeleton = NodePath("")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(0.486835, 0.0573654, 0.871608, 0.00626977, 0.997586, -0.0691587, -0.873472, 0.0391336, 0.4853, -0.0469869, 0.23903, 0.0902503)
 mesh = SubResource("ArrayMesh_pg0w5")
 skeleton = NodePath("")
 
-[node name="Cube_003" type="MeshInstance3D" parent="."]
+[node name="Cube_003" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(0.551444, 0, 0.834212, 0, 1, 0, -0.834212, 0, 0.551444, 0.0710198, 0.23903, -0.0579466)
 mesh = SubResource("ArrayMesh_bd4vg")
 skeleton = NodePath("")
 
-[node name="Cube_001" type="MeshInstance3D" parent="."]
+[node name="Cube_001" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(-0.998414, 0.00237581, -0.0562438, 0.00626976, 0.997586, -0.0691587, 0.0559438, -0.0694016, -0.996019, 0.0764647, 0.23903, 0.0902503)
 mesh = SubResource("ArrayMesh_uyrvi")
 skeleton = NodePath("")
 
-[node name="Cube_002" type="MeshInstance3D" parent="."]
+[node name="Cube_002" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(0.94474, -0.0285777, -0.326574, 0.00626976, 0.997586, -0.0691587, 0.327762, 0.0632894, 0.942638, -0.0469869, 0.23903, -0.058122)
 mesh = SubResource("ArrayMesh_8enjv")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0158691, 0.137787, 0.0132864)
-shape = SubResource("CylinderShape3D_3taxk")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014038, 0.270866, 0.0214736)
+shape = SubResource("CylinderShape3D_iu4ud")
