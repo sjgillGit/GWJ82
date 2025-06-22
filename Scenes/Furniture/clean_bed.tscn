@@ -242,6 +242,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qs73f")
 
 [node name="clean bed" type="RigidBody3D"]
+freeze = true
 script = ExtResource("2_48jfu")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]

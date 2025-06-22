@@ -6,6 +6,7 @@
 size = Vector3(0.0732422, 1.40381, 0.0778198)
 
 [node name="Coat hanger" instance=ExtResource("1_4gv5m")]
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(-1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.00788856, 0.69967, -0.000457764)

@@ -45,6 +45,7 @@ shadow_mesh = SubResource("ArrayMesh_do8xd")
 size = Vector3(3.12866, 0.0585938, 3.12598)
 
 [node name="Floor 2" type="RigidBody3D"]
+freeze = true
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_3kduv")

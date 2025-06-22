@@ -83,6 +83,7 @@ size = Vector3(1.12476, 0.0935059, 0.242432)
 size = Vector3(1, 0.389587, 0.605957)
 
 [node name="Desk" type="RigidBody3D"]
+freeze = true
 script = ExtResource("1_skyn7")
 
 [node name="Cube" type="MeshInstance3D" parent="."]

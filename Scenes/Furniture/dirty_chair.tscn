@@ -49,6 +49,7 @@ size = Vector3(0.463135, 0.308838, 0.425659)
 size = Vector3(0.391602, 0.400879, 0.110352)
 
 [node name="dirty_chair" type="RigidBody3D"]
+freeze = true
 script = ExtResource("1_jyr64")
 
 [node name="Cube_004" type="MeshInstance3D" parent="."]

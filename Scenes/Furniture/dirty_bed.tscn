@@ -242,6 +242,7 @@ size = Vector3(2.54555, 1.0025, 3.79285)
 size = Vector3(2.71841, 1.81696, 0.281189)
 
 [node name="dirty Bed" type="RigidBody3D"]
+freeze = true
 
 [node name="Meshes" type="Node3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

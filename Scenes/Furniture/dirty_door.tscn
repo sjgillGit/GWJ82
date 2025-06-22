@@ -127,6 +127,7 @@ shadow_mesh = SubResource("ArrayMesh_dbahw")
 size = Vector3(2.985, 5.692, 0.409637)
 
 [node name="Dirty door" type="RigidBody3D"]
+freeze = true
 script = ExtResource("1_7wusn")
 
 [node name="Meshes" type="Node3D" parent="."]

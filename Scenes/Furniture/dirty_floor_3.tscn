@@ -46,6 +46,7 @@ shadow_mesh = SubResource("ArrayMesh_tw8kp")
 size = Vector3(3.12866, 0.0585938, 3.12598)
 
 [node name="Dirty floor 3" type="RigidBody3D"]
+freeze = true
 script = ExtResource("1_jhk43")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
