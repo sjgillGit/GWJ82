@@ -94,10 +94,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		_pending_camera_rotation.x -= event.screen_relative.y * 0.002
 		_pending_camera_rotation.y -= event.screen_relative.x * 0.002
-	
-	# TODO: this should be handled in a world level script
-	if event.is_action_pressed(&"pause"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _physics_process(delta: float) -> void:
