@@ -6081,12 +6081,12 @@ skin = SubResource("Skin_cnyb3")
 [node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D"]
 
 [node name="Torso" type="PhysicalBone3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(7.3612, -0.504728, 0.977626, 1.10023, 3.37694, -6.54092, 5.67068e-08, 6.61357, 3.41445, -1.1947, 1.45901, -0.749595)
+transform = Transform3D(7.3612, -0.504728, 0.977626, 1.10023, 3.37694, -6.54092, 5.67068e-08, 6.61357, 3.41445, -1.19886, 1.45901, -0.748221)
 collision_layer = 8
 collision_mask = 9
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0027336, -0.00162327, 0.22268)
-body_offset = Transform3D(7.44297, -1.60933e-06, -1.01328e-06, -1.19209e-07, 3.41445, -6.61357, 1.79846e-06, 6.61357, 3.41445, -0.0203459, 1.47826, -0.749595)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032864, -0.00182521, 0.222669)
+body_offset = Transform3D(7.44297, -1.60933e-06, -1.01328e-06, -1.19209e-07, 3.41445, -6.61357, 1.79846e-06, 6.61357, 3.41445, -0.0244604, 1.47887, -0.748221)
 bone_name = "Bone"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -6134,11 +6134,11 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 
 script = ExtResource("2_cvnsp")
 
 [node name="PhysicalBone3D" type="PhysicalBone3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(7.3612, -1.10023, -3.27838e-08, 1.10023, 7.3612, -2.45606e-09, 3.27867e-08, -2.41706e-09, 7.44297, -2.12343, 4.83476, -2.15136e-07)
+transform = Transform3D(7.3612, -1.10023, -3.27838e-08, 1.10023, 7.3612, -2.45606e-09, 3.27867e-08, -2.41706e-09, 7.44297, -2.12343, 4.83477, -2.10479e-07)
 collision_layer = 8
 collision_mask = 9
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0590977, -0.665623, 2.83371e-08)
-body_offset = Transform3D(7.44297, 0, -1.77454e-06, 0, 7.44297, -4.43636e-07, 1.77454e-06, 4.43636e-07, 7.44297, -0.439862, 4.95421, -2.04891e-08)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0590978, -0.665623, 2.78366e-08)
+body_offset = Transform3D(7.44297, 0, -1.77454e-06, 0, 7.44297, -4.43636e-07, 1.77454e-06, 4.43636e-07, 7.44297, -0.439863, 4.95421, -1.67638e-08)
 bone_name = "Bone"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraOffset/PlayerModel/Armature/Skeleton3D/PhysicalBoneSimulator3D/PhysicalBone3D"]

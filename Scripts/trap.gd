@@ -21,8 +21,10 @@ var isDisarmed = false
 # Can be overwritten by child classes if need be
 func interact(item: PickableItem) -> void:
 	if !disarm_item:
+		StatTracker.traps_disarmed += 1
 		disarm()
 	elif item and item.name == disarm_item:
+		StatTracker.traps_disarmed += 1
 		disarm()
 
 # Disarm trap

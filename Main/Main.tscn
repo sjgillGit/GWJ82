@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://63x118b4yxow"]
+[gd_scene load_steps=18 format=3 uid="uid://63x118b4yxow"]
 
 [ext_resource type="PackedScene" uid="uid://ctgo2tyv07hj7" path="res://Main/og_layout.tscn" id="1_83ytx"]
 [ext_resource type="Script" uid="uid://dqqwfkoqu2hay" path="res://Main/main.gd" id="1_qd626"]
+[ext_resource type="Theme" uid="uid://tmetb50dovu1" path="res://Scenes/UI/main_menu_theme.tres" id="2_6yo1i"]
 [ext_resource type="PackedScene" uid="uid://cjtsppxp5qe3l" path="res://Scenes/player.tscn" id="2_amygn"]
 [ext_resource type="Environment" uid="uid://chg6o74ur0b1j" path="res://Main/3d_test.tres" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://um14l2k3rwvw" path="res://Scenes/Traps/pumpkin_trap.tscn" id="4_ps1la"]
@@ -50,7 +51,6 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 pre_trigger_animation = ""
 trigger_animation = ""
-disarm_item = "Wand"
 
 [node name="Desk" parent="." instance=ExtResource("6_qg80j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7409, 0.0631535, -0.776173)
@@ -96,5 +96,102 @@ exit_portal = NodePath("../Portal A in")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Portal A out"]
 transform = Transform3D(0.969153, 0, -0.246461, 0, 1, 0, 0.246461, 0, 0.969153, 0, 1.1593, 0)
 shape = SubResource("BoxShape3D_h5g1y")
+
+[node name="DeadMenu" type="PanelContainer" parent="."]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(450, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -300.0
+offset_right = 225.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_6yo1i")
+
+[node name="OptionsPanel" type="Panel" parent="DeadMenu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DeadMenu/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -262.0
+offset_right = 172.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeadMenu/OptionsPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "You Died!"
+horizontal_alignment = 1
+
+[node name="TrapsDisarmedTitle" type="Label" parent="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Traps Disarmed:"
+horizontal_alignment = 1
+
+[node name="TrapsDisarmed" type="Label" parent="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "10"
+horizontal_alignment = 1
+
+[node name="ItemsCleanedLabel" type="Label" parent="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Items Cleaned:"
+horizontal_alignment = 1
+
+[node name="ItemsCleaned" type="Label" parent="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "5/10"
+horizontal_alignment = 1
+
+[node name="FinalGradeTitle" type="Label" parent="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Final Grade:"
+horizontal_alignment = 1
+
+[node name="FinalGrade" type="Label" parent="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "A+"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+text = "Back to Main Menu"
+
+[connection signal="died" from="Player" to="." method="_on_player_died"]
+[connection signal="pressed" from="DeadMenu/OptionsPanel/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 
 [editable path="Portal A out"]

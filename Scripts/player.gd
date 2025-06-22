@@ -7,6 +7,8 @@ class_name Player extends CharacterBody3D
 
 ## Signals when [member raycast_hit] changes.
 signal raycast_hit_changed(raycast_hit: Object)
+## Signals when the player died.
+signal died()
 
 
 @export_category("Acceleration Values")
@@ -212,6 +214,7 @@ func die(impulse: Vector3) -> void:
 	_player_model.ragdoll_animation(impulse)
 	set_process_unhandled_input(false)
 	set_physics_process(false)
+	died.emit()
 #endregion
 
 

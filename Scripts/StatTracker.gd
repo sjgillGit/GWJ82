@@ -4,16 +4,23 @@ extends Node
 var score = 0
 var luck = 0 # CHANGE BACK !!!
 
+var traps_disarmed = 0
+var total_items = 0
+var cleaned_items = 0
+
 signal luck_changed
 
 # FUNCTIONS -------
 # Set score to zero
 func reset():
-	score = 0
+	traps_disarmed = 0
+	total_items = 0
+	cleaned_items = 0
 	luck = 4
 	
 # Return a grade (A,B,C,D,E,F) from score
-func evaluate_score():
+func evaluate_score(): 
+	score = (cleaned_items as float / total_items as float) * 100 + traps_disarmed
 	if score > 99:
 		return "A+"
 	elif score > 89:
@@ -28,9 +35,6 @@ func evaluate_score():
 		return "E"
 	else:
 		return "F"
-# Add/Substract to the score
-func add_score(amount):
-	score = score + amount
 	
 func decrement_luck():
 	luck -= 1

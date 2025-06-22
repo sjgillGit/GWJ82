@@ -5,6 +5,7 @@ var is_cleaned : bool = false
 @export var clean_scene: PackedScene
 
 func _ready():
+	StatTracker.total_items += 1
 	if clean_scene == null:
 		var this_scene_path = get_scene_file_path()
 		var clean_scene_path = this_scene_path.replace("dirty_", "clean_")
@@ -29,3 +30,4 @@ func interact(item: PickableItem):
 	queue_free()  # Remove the current (unclean) scene
 
 	is_cleaned = true
+	StatTracker.cleaned_items += 1

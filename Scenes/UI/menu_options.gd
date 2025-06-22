@@ -20,6 +20,7 @@ func _ready() -> void:
 	quit_button.pressed.connect(_handle_quit_button_pressed)
 
 func _handle_play_button_pressed() -> void:
+	StatTracker.reset()
 	get_tree().change_scene_to_packed(play_scene)
 
 func _handle_settings_button_pressed() -> void:
